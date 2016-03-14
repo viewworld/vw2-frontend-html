@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Bootstrap Admin App + jQuery">
+  <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
+  <title>Map Constructor - ViewWorld</title>
+  <!-- =============== VENDOR STYLES ===============-->
+  <!-- FONT AWESOME-->
+  <link rel="stylesheet" href="../vendor/fontawesome/css/font-awesome.min.css">
+  <!-- SIMPLE LINE ICONS-->
+  <link rel="stylesheet" href="../vendor/simple-line-icons/css/simple-line-icons.css">
+  <!-- ANIMATE.CSS-->
+  <link rel="stylesheet" href="../vendor/animate.css/animate.min.css">
+  <!-- WHIRL (spinners)-->
+  <link rel="stylesheet" href="../vendor/whirl/dist/whirl.css">
+  <!-- =============== PAGE VENDOR STYLES ===============-->
+  <!-- WEATHER ICONS-->
+  <link rel="stylesheet" href="../vendor/weather-icons/css/weather-icons.min.css">
+  <!-- =============== BOOTSTRAP STYLES ===============-->
+  <link rel="stylesheet" href="css/bootstrap.css" id="bscss">
+  <!-- =============== APP STYLES ===============-->
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/app.css" id="maincss">
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- top navbar-->
+    <header class="topnavbar-wrapper">
+      <!-- START Top Navbar-->
+      <nav role="navigation" class="navbar topnavbar">
+        <!-- START navbar header-->
+        <div class="navbar-header">
+          <a href="#/" class="navbar-brand">
+            <div class="brand-logo">
+              <img src="http://52.30.179.235/assets/viewworld-logo.png" alt="App Logo" class="img-responsive">
+            </div>
+            <div class="brand-logo-collapsed">
+              <img src="img/logo-single.png" alt="App Logo" class="img-responsive">
+            </div>
+          </a>
+        </div>
+        <!-- END navbar header-->
+        <!-- START Nav wrapper-->
+        <div class="nav-wrapper">
+          <!-- START Right Navbar-->
+          <ul class="nav navbar-nav navbar-right">
+            <!-- START Alert menu-->
+            <li class="dropdown dropdown-list">
+              <a href="#" data-toggle="dropdown">
+                <em class="icon-user"></em> Ivan Siniak
+              </a>
+              <!-- START Dropdown menu-->
+              <ul class="dropdown-menu animated fadeInUpShort">
+                <li>
+                  <!-- START list group-->
+                  <div class="list-group">
+                    <!-- list item-->
+                    <a href="profile.html" class="list-group-item">
+                      <div class="media-box">
+                        <div class="pull-left">
+                          <em class="fa fa-user fa-fw"></em>
+                        </div>
+                        <div class="media-box-body clearfix">
+                          <p class="center-vertical">My profile</p>
+                        </div>
+                      </div>
+                    </a>
+                    <!-- list item-->
+                    <a href="account.html" class="list-group-item">
+                      <div class="media-box">
+                        <div class="pull-left">
+                          <em class="fa fa-sliders fa-fw"></em>
+                        </div>
+                        <div class="media-box-body clearfix">
+                          <p class="center-vertical">Account settings</p>
+                        </div>
+                      </div>
+                    </a>
+                    <!-- last list item -->
+                    <a href="help.html" class="list-group-item">
+                      <div class="media-box">
+                        <div class="pull-left">
+                          <em class="fa fa-question fa-fw"></em>
+                        </div>
+                        <div class="media-box-body clearfix">
+                          <p class="center-vertical">Support Center</p>
+                        </div>
+                      </div>
+                    </a>
+                    <!-- list item-->
+                    <a href="login.html" class="list-group-item">
+                      <div class="media-box">
+                        <div class="pull-left">
+                          <em class="fa fa-power-off fa-fw"></em>
+                        </div>
+                        <div class="media-box-body clearfix">
+                          <p class="center-vertical">Logout</p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <!-- END list group-->
+                </li>
+              </ul>
+              <!-- END Dropdown menu-->
+            </li>
+            <!-- START Offsidebar button-->
+            <li class="">
+              <a href="#" data-toggle-state="offsidebar-open" data-no-persist="true">
+                <em class="icon-bubbles"></em>
+              </a>
+            </li>
+            <!-- END Offsidebar button-->
+            <!-- END Alert menu-->
+          </ul>
+          <!-- END Right Navbar-->
+        </div>
+        <!-- END Nav wrapper-->
+      </nav>
+      <!-- END Top Navbar-->
+    </header>
+    <!-- sidebar-->
+    <aside class="aside">
+      <!-- START Sidebar (left)-->
+      <div class="aside-inner">
+        <nav data-sidebar-anyclick-close="" class="sidebar">
+          <!-- START sidebar nav-->
+          <ul class="nav">
+            <!-- Iterates over all sidebar items-->
+            <li class="">
+              <a href="index.html" title="Dashboard">
+                <em class="icon-speedometer"></em>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class=" ">
+              <a href="messaging.html" title="Widgets">
+                <div class="pull-right label label-success">2</div>
+                <em class="icon-envelope"></em>
+                <span>Messaging</span>
+              </a>
+            </li>
+            <li class="nav-heading ">
+              <span>Data Collection</span>
+            </li>
+            <li class=" ">
+              <a href="inbox.html" title="Widgets">
+                <div class="pull-right label label-success">30</div>
+                <em class="fa fa-inbox"></em>
+                <span>Inbox</span>
+              </a>
+            </li>
+            <li class=" ">
+              <a href="observations.html" title="Widgets">
+                <em class="fa fa-folder"></em>
+                <span>Observations</span>
+              </a>
+            </li>
+            <li class=" ">
+              <a href="forms.html" title="Widgets">
+                <em class="fa fa-file-text"></em>
+                <span>Forms</span>
+              </a>
+            </li>
+            <li class="nav-heading ">
+              <span>Features</span>
+            </li>
+            <li class=" ">
+              <a href="map-constructor.html" title="Widgets">
+                <em class="icon-map"></em>
+                <span>Map Constructor</span>
+              </a>
+            </li>
+            <li class=" ">
+              <a href="pdf_generator.html" title="Widgets">
+                <em class="icon-doc"></em>
+                <span>PDF Generator</span>
+              </a>
+            </li>
+            <li class=" ">
+              <a href="charts.html" title="Widgets">
+                <em class="icon-pie-chart"></em>
+                <span>Charts</span>
+              </a>
+            </li>
+            <li class=" ">
+              <a href="export.html" title="Widgets">
+                <em class="icon-share-alt"></em>
+                <span>Export / Import</span>
+              </a>
+            </li>
+          </ul>
+          <!-- END sidebar nav-->
+        </nav>
+      </div>
+      <!-- END Sidebar (left)-->
+    </aside>
+    <!-- offsidebar-->
+    <aside class="offsidebar">
+      <!-- START Off Sidebar (right)-->
+      <nav>
+        <div role="tabpanel">
+          <!-- Tab panes-->
+          <div class="tab-content">
+            <div id="app-chat">
+              <h3 class="text-center text-thin">Messaging</h3>
+              <ul class="nav">
+                <!-- START list title-->
+                <li class="p">
+                  <small class="text-muted">ONLINE</small>
+                </li>
+                <!-- END list title-->
+                <li>
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0 chatuser" data-id="1">
+                    <span class="pull-right">
+                                 <span class="circle circle-success circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/05.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Juan Sims</strong>
+                                    <br>
+                                    <small class="text-muted">Designeer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0 chatuser" data-id="2">
+                    <span class="pull-right">
+                                 <span class="circle circle-success circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/06.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Maureen Jenkins</strong>
+                                    <br>
+                                    <small class="text-muted">Designeer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0 chatuser" data-id="3">
+                    <span class="pull-right">
+                                 <span class="circle circle-success circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/07.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Billie Dunn</strong>
+                                    <br>
+                                    <small class="text-muted">Designeer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0 chatuser" data-id="4">
+                    <span class="pull-right">
+                                 <span class="circle circle-success circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/08.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Tomothy Roberts</strong>
+                                    <br>
+                                    <small class="text-muted">Designer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                </li>
+                <!-- START list title-->
+                <li class="p">
+                  <small class="text-muted">OFFLINE</small>
+                </li>
+                <!-- END list title-->
+                <li>
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0 chatuser" data-id="5">
+                    <span class="pull-right">
+                                 <span class="circle circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/09.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Lawrence Robinson</strong>
+                                    <br>
+                                    <small class="text-muted">Developer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0 chatuser" data-id="6">
+                    <span class="pull-right">
+                                 <span class="circle circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/10.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Tyrone Owens</strong>
+                                    <br>
+                                    <small class="text-muted">Designer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- END Off Sidebar (right)-->
+    </aside>
+    <!-- Main section-->
+    <section>
+      <!-- Page content-->
+      <div class="content-wrapper">
+        <div class="content-heading">
+          <ol class="breadcrumb pull-right">
+            <li><a href="#">Home</a></li>
+            <li class="active">Help center</li>
+          </ol>
+          Help center
+        </div>
+        <!-- START widgets box-->
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <div class="panel-title">FAQ</div>
+                </div>
+                <div class="panel-body pt0">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum, massa ut pellentesque malesuada, libero nulla sagittis ex, vel pretium risus sem at diam. Morbi et viverra sem. Sed vel venenatis nunc. Mauris quis augue et tortor accumsan ullamcorper.</p>
+                </div>
+              </div>
+              
+              <div class="panel panel-default">
+                <div class="panel-heading">Question 1
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="pull-right">
+                    <em class="fa fa-chevron-down"></em>
+                  </a>
+                </div>
+                <div class="panel-wrapper collapse" id="collapse1">
+                  <div class="panel-body">
+                    <p>Aliquam eleifend facilisis hendrerit. Integer purus neque, aliquam et magna at, malesuada iaculis mi. Maecenas a nisi mauris. Suspendisse ut placerat nibh. Suspendisse luctus lacus consequat elementum auctor. Sed ac nunc malesuada, tristique odio a, lacinia est.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading">Question 2
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="pull-right">
+                    <em class="fa fa-chevron-down"></em>
+                  </a>
+                </div>
+                <div class="panel-wrapper collapse" id="collapse2">
+                  <div class="panel-body">
+                    <p>Aliquam eleifend facilisis hendrerit. Integer purus neque, aliquam et magna at, malesuada iaculis mi. Maecenas a nisi mauris. Suspendisse ut placerat nibh. Suspendisse luctus lacus consequat elementum auctor. Sed ac nunc malesuada, tristique odio a, lacinia est.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading">Question 3
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="pull-right">
+                    <em class="fa fa-chevron-down"></em>
+                  </a>
+                </div>
+                <div class="panel-wrapper collapse" id="collapse3">
+                  <div class="panel-body">
+                    <p>Aliquam eleifend facilisis hendrerit. Integer purus neque, aliquam et magna at, malesuada iaculis mi. Maecenas a nisi mauris. Suspendisse ut placerat nibh. Suspendisse luctus lacus consequat elementum auctor. Sed ac nunc malesuada, tristique odio a, lacinia est.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading">Question 4
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse4" class="pull-right">
+                    <em class="fa fa-chevron-down"></em>
+                  </a>
+                </div>
+                <div class="panel-wrapper collapse" id="collapse4">
+                  <div class="panel-body">
+                    <p>Aliquam eleifend facilisis hendrerit. Integer purus neque, aliquam et magna at, malesuada iaculis mi. Maecenas a nisi mauris. Suspendisse ut placerat nibh. Suspendisse luctus lacus consequat elementum auctor. Sed ac nunc malesuada, tristique odio a, lacinia est.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading">Question 5
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapse5" class="pull-right">
+                    <em class="fa fa-chevron-down"></em>
+                  </a>
+                </div>
+                <div class="panel-wrapper collapse" id="collapse5">
+                  <div class="panel-body">
+                    <p>Aliquam eleifend facilisis hendrerit. Integer purus neque, aliquam et magna at, malesuada iaculis mi. Maecenas a nisi mauris. Suspendisse ut placerat nibh. Suspendisse luctus lacus consequat elementum auctor. Sed ac nunc malesuada, tristique odio a, lacinia est.</p>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
+          <div class="popup-content hidden">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <div class="panel-title">Send request</div>
+              </div>
+                <div class="panel-body">
+                  <form role="form" class="row">
+                    <div class="form-group col-md-6">
+                      <label>Subject</label>
+                      <input type="text" placeholder="Enter subject" class="form-control">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label>Send a copy to email</label>
+                      <input type="email" placeholder="Enter email" class="form-control">
+                    </div>
+                    <div class="form-group col-md-12">
+                      <label for="">Your request</label>
+                      <textarea class="form-control" placeholder="Write your request"></textarea>
+                    </div>
+                    <div class="form-group col-md-12 mb0">
+                      <a href="#" class="btn btn-labeled btn-success pull-right">
+                        <span class="btn-label"><i class="icon-envelope"></i></span>Send request
+                      </a>
+                    </div>
+                  </form>
+                </div>
+            </div>
+          </div>
+
+          <div class="row page-actions">
+            <div class="col-md-12">
+              <a href="#" id="send-request" class="btn btn-labeled btn-primary pull-right">
+                <span class="btn-label"><i class="fa fa-question"></i></span>Send request
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- END widgets box-->
+      </div>
+    </section>
+    <!-- Page footer-->
+    <footer>
+      <span>&copy; 2016 - ViewWorld</span>
+    </footer>
+  </div>
+  <!-- =============== VENDOR SCRIPTS ===============-->
+  <!-- MODERNIZR-->
+  <script src="../vendor/modernizr/modernizr.custom.js"></script>
+  <!-- MATCHMEDIA POLYFILL-->
+  <script src="../vendor/matchMedia/matchMedia.js"></script>
+  <!-- JQUERY-->
+  <script src="../vendor/jquery/dist/jquery.js"></script>
+  <!-- BOOTSTRAP-->
+  <script src="../vendor/bootstrap/dist/js/bootstrap.js"></script>
+  <!-- STORAGE API-->
+  <script src="../vendor/jQuery-Storage-API/jquery.storageapi.js"></script>
+  <!-- JQUERY EASING-->
+  <script src="../vendor/jquery.easing/js/jquery.easing.js"></script>
+  <!-- ANIMO-->
+  <script src="../vendor/animo.js/animo.js"></script>
+  <!-- SLIMSCROLL-->
+  <script src="../vendor/slimScroll/jquery.slimscroll.min.js"></script>
+  <!-- SCREENFULL-->
+  <script src="../vendor/screenfull/dist/screenfull.js"></script>
+  <!-- LOCALIZE-->
+  <script src="../vendor/jquery-localize-i18n/dist/jquery.localize.js"></script>
+  <!-- =============== PAGE VENDOR SCRIPTS ===============-->
+  <!-- JQUERY STEPS-->
+  <script src="../vendor/jquery.steps/build/jquery.steps.js"></script>
+  <!-- =============== APP SCRIPTS ===============-->
+  <script src="js/app.js"></script>
+  <script src="js/magnific-popup.js"></script>
+  <script>
+    $("#send-request").click(function(event){
+      event.preventDefault();
+
+      $.magnificPopup.open({
+        items: {
+            src: '<div class="container">' + $(".popup-content").html() + '</div>',
+            type: 'inline'
+        }
+      });
+    })
+  </script>
+</body>
+
+</html>

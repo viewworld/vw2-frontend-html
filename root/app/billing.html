@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Bootstrap Admin App + jQuery">
+  <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
+  <title>Billing - ViewWorld</title>
+  <!-- =============== VENDOR STYLES ===============-->
+  <!-- FONT AWESOME-->
+  <link rel="stylesheet" href="../vendor/fontawesome/css/font-awesome.min.css">
+  <!-- SIMPLE LINE ICONS-->
+  <link rel="stylesheet" href="../vendor/simple-line-icons/css/simple-line-icons.css">
+  <!-- ANIMATE.CSS-->
+  <link rel="stylesheet" href="../vendor/animate.css/animate.min.css">
+  <!-- WHIRL (spinners)-->
+  <link rel="stylesheet" href="../vendor/whirl/dist/whirl.css">
+  <!-- =============== PAGE VENDOR STYLES ===============-->
+  <!-- WEATHER ICONS-->
+  <link rel="stylesheet" href="../vendor/weather-icons/css/weather-icons.min.css">
+  <!-- =============== BOOTSTRAP STYLES ===============-->
+  <link rel="stylesheet" href="css/bootstrap.css" id="bscss">
+  <!-- =============== APP STYLES ===============-->
+  <link rel="stylesheet" href="css/app.css" id="maincss">
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- top navbar-->
+    <header class="topnavbar-wrapper">
+      <!-- START Top Navbar-->
+      <nav role="navigation" class="navbar topnavbar">
+        <!-- START navbar header-->
+        <div class="navbar-header">
+          <a href="#/" class="navbar-brand">
+            <div class="brand-logo">
+              <img src="http://52.30.179.235/assets/viewworld-logo.png" alt="App Logo" class="img-responsive">
+            </div>
+            <div class="brand-logo-collapsed">
+              <img src="img/logo-single.png" alt="App Logo" class="img-responsive">
+            </div>
+          </a>
+        </div>
+        <!-- END navbar header-->
+        <!-- START Nav wrapper-->
+        <div class="nav-wrapper">
+          <!-- START Right Navbar-->
+          <ul class="nav navbar-nav navbar-right">
+            <!-- START Alert menu-->
+            <li class="dropdown dropdown-list">
+              <a href="#" data-toggle="dropdown">
+                <em class="icon-user"></em> Ivan Siniak
+              </a>
+              <!-- START Dropdown menu-->
+              <ul class="dropdown-menu animated fadeInUpShort">
+                <li>
+                  <!-- START list group-->
+                  <div class="list-group">
+                    <!-- list item-->
+                    <a href="account.html" class="list-group-item list-group-item-double">
+                      <div class="media-box">
+                        <div class="pull-left">
+                          <em class="fa fa-cloud fa-fw"></em>
+                        </div>
+                        <div class="media-box-body clearfix">
+                          <p class="m0">Free account</p>
+                          <p class="m0 text-muted">
+                            <small>Click to upgrade</small>
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                    <!-- list item-->
+                    <a href="profile.html" class="list-group-item">
+                      <div class="media-box">
+                        <div class="pull-left">
+                          <em class="fa fa-user fa-fw"></em>
+                        </div>
+                        <div class="media-box-body clearfix">
+                          <p class="center-vertical">My profile</p>
+                        </div>
+                      </div>
+                    </a>
+                    <!-- list item-->
+                    <a href="billing.html" class="list-group-item">
+                      <div class="media-box">
+                        <div class="pull-left">
+                          <em class="fa fa-credit-card fa-fw"></em>
+                        </div>
+                        <div class="media-box-body clearfix">
+                          <p class="center-vertical">Billing</p>
+                        </div>
+                      </div>
+                    </a>
+                    <!-- last list item -->
+                    <a href="help.html" class="list-group-item">
+                      <div class="media-box">
+                        <div class="pull-left">
+                          <em class="fa fa-question fa-fw"></em>
+                        </div>
+                        <div class="media-box-body clearfix">
+                          <p class="center-vertical">Support Center</p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <!-- END list group-->
+                </li>
+              </ul>
+              <!-- END Dropdown menu-->
+            </li>
+            <!-- END Alert menu-->
+            <!-- START Offsidebar button-->
+            <li>
+              <a href="#">
+                <em class="fa fa-power-off"></em>
+              </a>
+            </li>
+            <!-- END Offsidebar menu-->
+            <!-- START Offsidebar button-->
+            <li class="hidden">
+              <a href="#" data-toggle-state="offsidebar-open" data-no-persist="true">
+                <em class="icon-notebook"></em>
+              </a>
+            </li>
+            <!-- END Offsidebar menu-->
+          </ul>
+          <!-- END Right Navbar-->
+        </div>
+        <!-- END Nav wrapper-->
+      </nav>
+      <!-- END Top Navbar-->
+    </header>
+    <!-- sidebar-->
+    <aside class="aside">
+      <!-- START Sidebar (left)-->
+      <div class="aside-inner">
+        <nav data-sidebar-anyclick-close="" class="sidebar">
+          <!-- START sidebar nav-->
+          <ul class="nav">
+            <!-- Iterates over all sidebar items-->
+            <li>
+              <a href="index.html" title="Dashboard">
+                <em class="icon-speedometer"></em>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-heading ">
+              <span>Data Collection</span>
+            </li>
+            <li class="">
+              <a href="inbox.html" title="Widgets">
+                <div class="pull-right label label-success">30</div>
+                <em class="fa fa-inbox"></em>
+                <span>Inbox</span>
+              </a>
+            </li>
+            <li class=" ">
+              <a href="observations.html" title="Widgets">
+                <em class="fa fa-folder"></em>
+                <span>Observations</span>
+              </a>
+            </li>
+            <li class=" ">
+              <a href="forms.html" title="Widgets">
+                <em class="fa fa-file-text"></em>
+                <span>Forms</span>
+              </a>
+            </li>
+            <li class="nav-heading ">
+              <span>Features</span>
+            </li>
+            <li class=" ">
+              <a href="map-constructor.html" title="Widgets">
+                <em class="icon-map"></em>
+                <span>Map Constructor</span>
+              </a>
+            </li>
+            <li class=" ">
+              <a href="charts.html" title="Widgets">
+                <em class="icon-pie-chart"></em>
+                <span>Charts</span>
+              </a>
+            </li>
+            <li class=" ">
+              <a href="export.html" title="Widgets">
+                <em class="icon-share-alt"></em>
+                <span>Export</span>
+              </a>
+            </li>
+          </ul>
+          <!-- END sidebar nav-->
+        </nav>
+      </div>
+      <!-- END Sidebar (left)-->
+    </aside>
+    <!-- offsidebar-->
+    <aside class="offsidebar hide">
+      <!-- START Off Sidebar (right)-->
+      <nav>
+        <div role="tabpanel">
+          <!-- Nav tabs-->
+          <ul role="tablist" class="nav nav-tabs nav-justified">
+            <li role="presentation" class="active">
+              <a href="#app-settings" aria-controls="app-settings" role="tab" data-toggle="tab">
+                <em class="icon-equalizer fa-lg"></em>
+              </a>
+            </li>
+            <li role="presentation">
+              <a href="#app-chat" aria-controls="app-chat" role="tab" data-toggle="tab">
+                <em class="icon-user fa-lg"></em>
+              </a>
+            </li>
+          </ul>
+          <!-- Tab panes-->
+          <div class="tab-content">
+            <div id="app-settings" role="tabpanel" class="tab-pane fade in active">
+              <h3 class="text-center text-thin">Settings</h3>
+              <div class="p">
+                <h4 class="text-muted text-thin">Themes</h4>
+                <div class="table-grid mb">
+                  <div class="col mb">
+                    <div class="setting-color">
+                      <label data-load-css="css/theme-a.css">
+                        <input type="radio" name="setting-theme" checked="checked">
+                        <span class="icon-check"></span>
+                        <span class="split">
+                                       <span class="color bg-info"></span>
+                        <span class="color bg-info-light"></span>
+                        </span>
+                        <span class="color bg-white"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col mb">
+                    <div class="setting-color">
+                      <label data-load-css="css/theme-b.css">
+                        <input type="radio" name="setting-theme">
+                        <span class="icon-check"></span>
+                        <span class="split">
+                                       <span class="color bg-green"></span>
+                        <span class="color bg-green-light"></span>
+                        </span>
+                        <span class="color bg-white"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col mb">
+                    <div class="setting-color">
+                      <label data-load-css="css/theme-c.css">
+                        <input type="radio" name="setting-theme">
+                        <span class="icon-check"></span>
+                        <span class="split">
+                                       <span class="color bg-purple"></span>
+                        <span class="color bg-purple-light"></span>
+                        </span>
+                        <span class="color bg-white"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col mb">
+                    <div class="setting-color">
+                      <label data-load-css="css/theme-d.css">
+                        <input type="radio" name="setting-theme">
+                        <span class="icon-check"></span>
+                        <span class="split">
+                                       <span class="color bg-danger"></span>
+                        <span class="color bg-danger-light"></span>
+                        </span>
+                        <span class="color bg-white"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="table-grid mb">
+                  <div class="col mb">
+                    <div class="setting-color">
+                      <label data-load-css="css/theme-e.css">
+                        <input type="radio" name="setting-theme">
+                        <span class="icon-check"></span>
+                        <span class="split">
+                                       <span class="color bg-info-dark"></span>
+                        <span class="color bg-info"></span>
+                        </span>
+                        <span class="color bg-gray-dark"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col mb">
+                    <div class="setting-color">
+                      <label data-load-css="css/theme-f.css">
+                        <input type="radio" name="setting-theme">
+                        <span class="icon-check"></span>
+                        <span class="split">
+                                       <span class="color bg-green-dark"></span>
+                        <span class="color bg-green"></span>
+                        </span>
+                        <span class="color bg-gray-dark"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col mb">
+                    <div class="setting-color">
+                      <label data-load-css="css/theme-g.css">
+                        <input type="radio" name="setting-theme">
+                        <span class="icon-check"></span>
+                        <span class="split">
+                                       <span class="color bg-purple-dark"></span>
+                        <span class="color bg-purple"></span>
+                        </span>
+                        <span class="color bg-gray-dark"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col mb">
+                    <div class="setting-color">
+                      <label data-load-css="css/theme-h.css">
+                        <input type="radio" name="setting-theme">
+                        <span class="icon-check"></span>
+                        <span class="split">
+                                       <span class="color bg-danger-dark"></span>
+                        <span class="color bg-danger"></span>
+                        </span>
+                        <span class="color bg-gray-dark"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="p">
+                <h4 class="text-muted text-thin">Layout</h4>
+                <div class="clearfix">
+                  <p class="pull-left">Fixed</p>
+                  <div class="pull-right">
+                    <label class="switch">
+                      <input id="chk-fixed" type="checkbox" data-toggle-state="layout-fixed">
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="clearfix">
+                  <p class="pull-left">Boxed</p>
+                  <div class="pull-right">
+                    <label class="switch">
+                      <input id="chk-boxed" type="checkbox" data-toggle-state="layout-boxed">
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="clearfix">
+                  <p class="pull-left">RTL</p>
+                  <div class="pull-right">
+                    <label class="switch">
+                      <input id="chk-rtl" type="checkbox">
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="p">
+                <h4 class="text-muted text-thin">Aside</h4>
+                <div class="clearfix">
+                  <p class="pull-left">Collapsed</p>
+                  <div class="pull-right">
+                    <label class="switch">
+                      <input id="chk-collapsed" type="checkbox" data-toggle-state="aside-collapsed">
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="clearfix">
+                  <p class="pull-left">Float</p>
+                  <div class="pull-right">
+                    <label class="switch">
+                      <input id="chk-float" type="checkbox" data-toggle-state="aside-float">
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="clearfix">
+                  <p class="pull-left">Hover</p>
+                  <div class="pull-right">
+                    <label class="switch">
+                      <input id="chk-hover" type="checkbox" data-toggle-state="aside-hover">
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="clearfix">
+                  <p class="pull-left">Show Scrollbar</p>
+                  <div class="pull-right">
+                    <label class="switch">
+                      <input id="chk-hover" type="checkbox" data-toggle-state="show-scrollbar" data-target=".sidebar">
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="app-chat" role="tabpanel" class="tab-pane fade">
+              <h3 class="text-center text-thin">Connections</h3>
+              <ul class="nav">
+                <!-- START list title-->
+                <li class="p">
+                  <small class="text-muted">ONLINE</small>
+                </li>
+                <!-- END list title-->
+                <li>
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0">
+                    <span class="pull-right">
+                                 <span class="circle circle-success circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/05.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Juan Sims</strong>
+                                    <br>
+                                    <small class="text-muted">Designeer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0">
+                    <span class="pull-right">
+                                 <span class="circle circle-success circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/06.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Maureen Jenkins</strong>
+                                    <br>
+                                    <small class="text-muted">Designeer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0">
+                    <span class="pull-right">
+                                 <span class="circle circle-danger circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/07.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Billie Dunn</strong>
+                                    <br>
+                                    <small class="text-muted">Designeer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0">
+                    <span class="pull-right">
+                                 <span class="circle circle-warning circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/08.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Tomothy Roberts</strong>
+                                    <br>
+                                    <small class="text-muted">Designer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                </li>
+                <!-- START list title-->
+                <li class="p">
+                  <small class="text-muted">OFFLINE</small>
+                </li>
+                <!-- END list title-->
+                <li>
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0">
+                    <span class="pull-right">
+                                 <span class="circle circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/09.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Lawrence Robinson</strong>
+                                    <br>
+                                    <small class="text-muted">Developer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0">
+                    <span class="pull-right">
+                                 <span class="circle circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/10.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Tyrone Owens</strong>
+                                    <br>
+                                    <small class="text-muted">Designer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                </li>
+                <li>
+                  <div class="p-lg text-center">
+                    <!-- Optional link to list more users-->
+                    <a href="#" title="See more contacts" class="btn btn-purple btn-sm">
+                      <strong>Load more..</strong>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+              <!-- Extra items-->
+              <div class="p">
+                <p>
+                  <small class="text-muted">Tasks completion</small>
+                </p>
+                <div class="progress progress-xs m0">
+                  <div role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-success progress-80">
+                    <span class="sr-only">80% Complete</span>
+                  </div>
+                </div>
+              </div>
+              <div class="p">
+                <p>
+                  <small class="text-muted">Upload quota</small>
+                </p>
+                <div class="progress progress-xs m0">
+                  <div role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-warning progress-40">
+                    <span class="sr-only">40% Complete</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- END Off Sidebar (right)-->
+    </aside>
+    <!-- Main section-->
+    <section>
+      <!-- Page content-->
+      <div class="content-wrapper">
+        <div class="content-heading">
+          <ol class="breadcrumb pull-right">
+            <li><a href="#">Home</a></li>
+            <li class="active">Billing</li>
+          </ol>
+          Billing 
+        </div>
+        <!-- START widgets box-->
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6"><h3 class='mt0'>Payment methods</h3></div>
+            <div class="col-md-6">
+              <button type="button" class="btn btn-labeled btn-primary pull-right">
+                <span class="btn-label"><i class="fa fa-plus"></i></span>Add card
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+               <div class="panel panel-default">
+                  <div class="panel-heading">
+                      <div class="panel-title">Payment methods</div>
+                  </div>
+                  <div class="panel-body p0">
+                     <table class="table">
+                       <thead>
+                         <tr>
+                           <th>Card</th>
+                           <th>Name</th>
+                           <th>Expires on</th>
+                           <th style="width: 250px;"><span class="pull-right">Actions</span></th>
+                         </tr>
+                       </thead>
+                       <tbody>
+                         <tr>
+                           <td><img src="/app/img/visa.png" alt="" class="mr-sm"> Ends on 5501</td>
+                           <td>Mark Schmidt</td>
+                           <td>05/16</td>
+                           <td>
+                              <div class="pull-right">
+                                 <button class="btn btn-default" disabled><i class="fa fa-check fa-fw"></i> Is primary</button>
+                                 <button class="btn btn-outline btn-primary"><i class="fa fa-pencil fa-fw"></i></button>
+                                 <button class="btn btn-outline btn-danger"><i class="fa fa-trash fa-fw"></i></button>
+                              </div>
+                           </td>
+                         </tr>
+                         <tr>
+                           <td><img src="/app/img/mastercard.png" alt="" class="mr-sm"> Ends on 4412</td>
+                           <td>Mark Schmidt</td>
+                           <td>09/17</td>
+                           <td>
+                              <div class="pull-right">
+                                 <button class="btn btn-outline btn-primary">Make primary</button>
+                                 <button class="btn btn-outline btn-primary"><i class="fa fa-pencil fa-fw"></i></button>
+                                 <button class="btn btn-outline btn-danger"><i class="fa fa-trash fa-fw"></i></button>
+                              </div>
+                           </td>
+                         </tr>
+                       </tbody>
+                     </table>
+                  </div>
+               </div>
+             </div>
+            <div class="col-md-12">
+               <h3>Current spending (January)</h3>
+               <div class="panel panel-default">
+                  <div class="panel-heading">
+                      <div class="panel-title">Current spending (January)</div>
+                  </div>
+                  <div class="panel-body p0">
+                     <table class="table">
+                       <thead>
+                         <tr>
+                           <th>Summary</th>
+                           <th>Quantity</th>
+                           <th>Price</th>
+                           <th>Total per month</th>
+                         </tr>
+                       </thead>
+                       <tbody>
+                         <tr>
+                           <td>Users</td>
+                           <td>10</td>
+                           <td>10$ per 1</td>
+                           <td>100$</td>
+                         </tr>
+                         <tr>
+                           <td>Forms</td>
+                           <td>3</td>
+                           <td>30$ per 1</td>
+                           <td>90$</td>
+                         </tr>
+                         <tr>
+                           <td>Uploads per month</td>
+                           <td>200</td>
+                           <td>10$ per 10</td>
+                           <td>200$</td>
+                         </tr>
+                         <tr>
+                           <td colspan='3'><strong>Total</strong></td>
+                           <td><strong>390$</strong></td>
+                         </tr>
+                       </tbody>
+                     </table>
+                  </div>
+               </div>
+             </div>
+            <div class="col-md-12">
+               <h3>Payment history</h3>
+               <div class="panel panel-default">
+                  <div class="panel-heading">
+                      <div class="panel-title">Payment history</div>
+                  </div>
+                  <div class="panel-body p0">
+                     <table class="table">
+                       <thead>
+                         <tr>
+                           <th>Date</th>
+                           <th>Method</th>
+                           <th>Amount</th>
+                           <th>Invoice</th>
+                         </tr>
+                       </thead>
+                       <tbody>
+                         <tr>
+                           <td>November 1</td>
+                           <td>Card ending on 5511</td>
+                           <td>300$</td>
+                           <td><a href="invoice.html">vw20151101</a></td>
+                         </tr>
+                         <tr>
+                           <td>December 3</td>
+                           <td>Card ending on 5511</td>
+                           <td>330$</td>
+                           <td><a href="invoice.html">vw20151203</a></td>
+                         </tr>
+                         <tr>
+                           <td>January 1</td>
+                           <td>Card ending on 5511</td>
+                           <td>390$</td>
+                           <td><a href="invoice.html">vw20160101</a></td>
+                         </tr>
+                       </tbody>
+                     </table>
+                  </div>
+               </div>
+             </div>
+          </div>
+        </div>
+        <!-- END widgets box-->
+      </div>
+    </section>
+    <!-- Page footer-->
+    <footer>
+      <span>&copy; 2016 - ViewWorld</span>
+    </footer>
+  </div>
+  <!-- =============== VENDOR SCRIPTS ===============-->
+  <!-- MODERNIZR-->
+  <script src="../vendor/modernizr/modernizr.custom.js"></script>
+  <!-- MATCHMEDIA POLYFILL-->
+  <script src="../vendor/matchMedia/matchMedia.js"></script>
+  <!-- JQUERY-->
+  <script src="../vendor/jquery/dist/jquery.js"></script>
+  <!-- BOOTSTRAP-->
+  <script src="../vendor/bootstrap/dist/js/bootstrap.js"></script>
+  <!-- STORAGE API-->
+  <script src="../vendor/jQuery-Storage-API/jquery.storageapi.js"></script>
+  <!-- JQUERY EASING-->
+  <script src="../vendor/jquery.easing/js/jquery.easing.js"></script>
+  <!-- ANIMO-->
+  <script src="../vendor/animo.js/animo.js"></script>
+  <!-- SLIMSCROLL-->
+  <script src="../vendor/slimScroll/jquery.slimscroll.min.js"></script>
+  <!-- SCREENFULL-->
+  <script src="../vendor/screenfull/dist/screenfull.js"></script>
+  <!-- LOCALIZE-->
+  <script src="../vendor/jquery-localize-i18n/dist/jquery.localize.js"></script>
+  <!-- RTL demo-->
+  <script src="js/demo/demo-rtl.js"></script>
+  <!-- =============== PAGE VENDOR SCRIPTS ===============-->
+  <!-- JQUERY STEPS-->
+  <script src="../vendor/jquery.steps/build/jquery.steps.js"></script>
+  <!-- =============== APP SCRIPTS ===============-->
+  <script src="js/app.js"></script>
+  <script>
+  </script>
+</body>
+
+</html>

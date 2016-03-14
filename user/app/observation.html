@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Bootstrap Admin App + jQuery">
+  <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
+  <title>Species observation - ViewWorld</title>
+  <!-- =============== VENDOR STYLES ===============-->
+  <!-- FONT AWESOME-->
+  <link rel="stylesheet" href="../vendor/fontawesome/css/font-awesome.min.css">
+  <!-- SIMPLE LINE ICONS-->
+  <link rel="stylesheet" href="../vendor/simple-line-icons/css/simple-line-icons.css">
+  <!-- ANIMATE.CSS-->
+  <link rel="stylesheet" href="../vendor/animate.css/animate.min.css">
+  <!-- WHIRL (spinners)-->
+  <link rel="stylesheet" href="../vendor/whirl/dist/whirl.css">
+  <!-- =============== PAGE VENDOR STYLES ===============-->
+  <!-- WEATHER ICONS-->
+  <link rel="stylesheet" href="../vendor/weather-icons/css/weather-icons.min.css">
+  <!-- =============== BOOTSTRAP STYLES ===============-->
+  <link rel="stylesheet" href="css/bootstrap.css" id="bscss">
+  <!-- =============== APP STYLES ===============-->
+  <link rel="stylesheet" href="css/app.css" id="maincss">
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- top navbar-->
+    <header class="topnavbar-wrapper">
+      <!-- START Top Navbar-->
+      <nav role="navigation" class="navbar topnavbar">
+        <!-- START navbar header-->
+        <div class="navbar-header">
+          <a href="#/" class="navbar-brand">
+            <div class="brand-logo">
+              <img src="http://52.30.179.235/assets/viewworld-logo.png" alt="App Logo" class="img-responsive">
+            </div>
+            <div class="brand-logo-collapsed">
+              <img src="img/logo-single.png" alt="App Logo" class="img-responsive">
+            </div>
+          </a>
+        </div>
+        <!-- END navbar header-->
+        <!-- START Nav wrapper-->
+        <div class="nav-wrapper">
+          <!-- START Right Navbar-->
+          <ul class="nav navbar-nav navbar-right">
+            <!-- START Alert menu-->
+            <li class="dropdown dropdown-list">
+              <a href="#" data-toggle="dropdown">
+                <em class="icon-user"></em> Ivan Siniak
+              </a>
+              <!-- START Dropdown menu-->
+              <ul class="dropdown-menu animated fadeInUpShort">
+                <li>
+                  <!-- START list group-->
+                  <div class="list-group">
+                    <!-- list item-->
+                    <a href="account.html" class="list-group-item list-group-item-double">
+                      <div class="media-box">
+                        <div class="pull-left">
+                          <em class="fa fa-cloud fa-fw"></em>
+                        </div>
+                        <div class="media-box-body clearfix">
+                          <p class="m0">Free account</p>
+                          <p class="m0 text-muted">
+                            <small>Click to upgrade</small>
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                    <!-- list item-->
+                    <a href="profile.html" class="list-group-item">
+                      <div class="media-box">
+                        <div class="pull-left">
+                          <em class="fa fa-user fa-fw"></em>
+                        </div>
+                        <div class="media-box-body clearfix">
+                          <p class="center-vertical">My profile</p>
+                        </div>
+                      </div>
+                    </a>
+                    <!-- list item-->
+                    <a href="billing.html" class="list-group-item">
+                      <div class="media-box">
+                        <div class="pull-left">
+                          <em class="fa fa-credit-card fa-fw"></em>
+                        </div>
+                        <div class="media-box-body clearfix">
+                          <p class="center-vertical">Billing</p>
+                        </div>
+                      </div>
+                    </a>
+                    <!-- last list item -->
+                    <a href="help.html" class="list-group-item">
+                      <div class="media-box">
+                        <div class="pull-left">
+                          <em class="fa fa-question fa-fw"></em>
+                        </div>
+                        <div class="media-box-body clearfix">
+                          <p class="center-vertical">Support Center</p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <!-- END list group-->
+                </li>
+              </ul>
+              <!-- END Dropdown menu-->
+            </li>
+            <!-- END Alert menu-->
+            <!-- START Offsidebar button-->
+            <li>
+              <a href="#">
+                <em class="fa fa-fw fa-power-off"></em>
+              </a>
+            </li>
+            <!-- END Offsidebar menu-->
+            <!-- START Offsidebar button-->
+            <li class="hidden">
+              <a href="#" data-toggle-state="offsidebar-open" data-no-persist="true">
+                <em class="icon-notebook"></em>
+              </a>
+            </li>
+            <!-- END Offsidebar menu-->
+          </ul>
+          <!-- END Right Navbar-->
+        </div>
+        <!-- END Nav wrapper-->
+      </nav>
+      <!-- END Top Navbar-->
+    </header>
+    <!-- sidebar-->
+    <aside class="aside">
+      <!-- START Sidebar (left)-->
+      <div class="aside-inner">
+        <nav data-sidebar-anyclick-close="" class="sidebar">
+          <!-- START sidebar nav-->
+          <ul class="nav">
+            <!-- Iterates over all sidebar items-->
+            <li>
+              <a href="index.html" title="Dashboard">
+                <em class="icon-speedometer"></em>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-heading ">
+              <span>Data Collection</span>
+            </li>
+            <li class=" ">
+              <a href="inbox.html" title="Widgets">
+                <div class="pull-right label label-success">30</div>
+                <em class="fa fa-fw fa-inbox"></em>
+                <span>Inbox</span>
+              </a>
+            </li>
+            <li class="active">
+              <a href="observations.html" title="Widgets">
+                <em class="fa fa-fw fa-folder"></em>
+                <span>Observations</span>
+              </a>
+            </li>
+            <li class="">
+              <a href="forms.html" title="Widgets">
+                <em class="fa fa-fw fa-file-text"></em>
+                <span>Forms</span>
+              </a>
+            </li>
+            <li class="nav-heading ">
+              <span>Features</span>
+            </li>
+            <li class=" ">
+              <a href="map-constructor.html" title="Widgets">
+                <em class="icon-map"></em>
+                <span>Map Constructor</span>
+              </a>
+            </li>
+            <li class=" ">
+              <a href="charts.html" title="Widgets">
+                <em class="icon-pie-chart"></em>
+                <span>Charts</span>
+              </a>
+            </li>
+            <li class=" ">
+              <a href="export.html" title="Widgets">
+                <em class="icon-share-alt"></em>
+                <span>Export</span>
+              </a>
+            </li>
+          </ul>
+          <!-- END sidebar nav-->
+        </nav>
+      </div>
+      <!-- END Sidebar (left)-->
+    </aside>
+    <!-- offsidebar-->
+    <aside class="offsidebar hide">
+      <!-- START Off Sidebar (right)-->
+      <nav>
+        <div role="tabpanel">
+          <!-- Nav tabs-->
+          <ul role="tablist" class="nav nav-tabs nav-justified">
+            <li role="presentation" class="active">
+              <a href="#app-settings" aria-controls="app-settings" role="tab" data-toggle="tab">
+                <em class="icon-equalizer fa-lg"></em>
+              </a>
+            </li>
+            <li role="presentation">
+              <a href="#app-chat" aria-controls="app-chat" role="tab" data-toggle="tab">
+                <em class="icon-user fa-lg"></em>
+              </a>
+            </li>
+          </ul>
+          <!-- Tab panes-->
+          <div class="tab-content">
+            <div id="app-settings" role="tabpanel" class="tab-pane fade in active">
+              <h3 class="text-center text-thin">Settings</h3>
+              <div class="p">
+                <h4 class="text-muted text-thin">Themes</h4>
+                <div class="table-grid mb">
+                  <div class="col mb">
+                    <div class="setting-color">
+                      <label data-load-css="css/theme-a.css">
+                        <input type="radio" name="setting-theme" checked="checked">
+                        <span class="icon-check"></span>
+                        <span class="split">
+                                       <span class="color bg-info"></span>
+                        <span class="color bg-info-light"></span>
+                        </span>
+                        <span class="color bg-white"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col mb">
+                    <div class="setting-color">
+                      <label data-load-css="css/theme-b.css">
+                        <input type="radio" name="setting-theme">
+                        <span class="icon-check"></span>
+                        <span class="split">
+                                       <span class="color bg-green"></span>
+                        <span class="color bg-green-light"></span>
+                        </span>
+                        <span class="color bg-white"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col mb">
+                    <div class="setting-color">
+                      <label data-load-css="css/theme-c.css">
+                        <input type="radio" name="setting-theme">
+                        <span class="icon-check"></span>
+                        <span class="split">
+                                       <span class="color bg-purple"></span>
+                        <span class="color bg-purple-light"></span>
+                        </span>
+                        <span class="color bg-white"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col mb">
+                    <div class="setting-color">
+                      <label data-load-css="css/theme-d.css">
+                        <input type="radio" name="setting-theme">
+                        <span class="icon-check"></span>
+                        <span class="split">
+                                       <span class="color bg-danger"></span>
+                        <span class="color bg-danger-light"></span>
+                        </span>
+                        <span class="color bg-white"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="table-grid mb">
+                  <div class="col mb">
+                    <div class="setting-color">
+                      <label data-load-css="css/theme-e.css">
+                        <input type="radio" name="setting-theme">
+                        <span class="icon-check"></span>
+                        <span class="split">
+                                       <span class="color bg-info-dark"></span>
+                        <span class="color bg-info"></span>
+                        </span>
+                        <span class="color bg-gray-dark"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col mb">
+                    <div class="setting-color">
+                      <label data-load-css="css/theme-f.css">
+                        <input type="radio" name="setting-theme">
+                        <span class="icon-check"></span>
+                        <span class="split">
+                                       <span class="color bg-green-dark"></span>
+                        <span class="color bg-green"></span>
+                        </span>
+                        <span class="color bg-gray-dark"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col mb">
+                    <div class="setting-color">
+                      <label data-load-css="css/theme-g.css">
+                        <input type="radio" name="setting-theme">
+                        <span class="icon-check"></span>
+                        <span class="split">
+                                       <span class="color bg-purple-dark"></span>
+                        <span class="color bg-purple"></span>
+                        </span>
+                        <span class="color bg-gray-dark"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col mb">
+                    <div class="setting-color">
+                      <label data-load-css="css/theme-h.css">
+                        <input type="radio" name="setting-theme">
+                        <span class="icon-check"></span>
+                        <span class="split">
+                                       <span class="color bg-danger-dark"></span>
+                        <span class="color bg-danger"></span>
+                        </span>
+                        <span class="color bg-gray-dark"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="p">
+                <h4 class="text-muted text-thin">Layout</h4>
+                <div class="clearfix">
+                  <p class="pull-left">Fixed</p>
+                  <div class="pull-right">
+                    <label class="switch">
+                      <input id="chk-fixed" type="checkbox" data-toggle-state="layout-fixed">
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="clearfix">
+                  <p class="pull-left">Boxed</p>
+                  <div class="pull-right">
+                    <label class="switch">
+                      <input id="chk-boxed" type="checkbox" data-toggle-state="layout-boxed">
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="clearfix">
+                  <p class="pull-left">RTL</p>
+                  <div class="pull-right">
+                    <label class="switch">
+                      <input id="chk-rtl" type="checkbox">
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="p">
+                <h4 class="text-muted text-thin">Aside</h4>
+                <div class="clearfix">
+                  <p class="pull-left">Collapsed</p>
+                  <div class="pull-right">
+                    <label class="switch">
+                      <input id="chk-collapsed" type="checkbox" data-toggle-state="aside-collapsed">
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="clearfix">
+                  <p class="pull-left">Float</p>
+                  <div class="pull-right">
+                    <label class="switch">
+                      <input id="chk-float" type="checkbox" data-toggle-state="aside-float">
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="clearfix">
+                  <p class="pull-left">Hover</p>
+                  <div class="pull-right">
+                    <label class="switch">
+                      <input id="chk-hover" type="checkbox" data-toggle-state="aside-hover">
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="clearfix">
+                  <p class="pull-left">Show Scrollbar</p>
+                  <div class="pull-right">
+                    <label class="switch">
+                      <input id="chk-hover" type="checkbox" data-toggle-state="show-scrollbar" data-target=".sidebar">
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="app-chat" role="tabpanel" class="tab-pane fade">
+              <h3 class="text-center text-thin">Connections</h3>
+              <ul class="nav">
+                <!-- START list title-->
+                <li class="p">
+                  <small class="text-muted">ONLINE</small>
+                </li>
+                <!-- END list title-->
+                <li>
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0">
+                    <span class="pull-right">
+                                 <span class="circle circle-success circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/05.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Juan Sims</strong>
+                                    <br>
+                                    <small class="text-muted">Designeer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0">
+                    <span class="pull-right">
+                                 <span class="circle circle-success circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/06.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Maureen Jenkins</strong>
+                                    <br>
+                                    <small class="text-muted">Designeer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0">
+                    <span class="pull-right">
+                                 <span class="circle circle-danger circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/07.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Billie Dunn</strong>
+                                    <br>
+                                    <small class="text-muted">Designeer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0">
+                    <span class="pull-right">
+                                 <span class="circle circle-warning circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/08.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Tomothy Roberts</strong>
+                                    <br>
+                                    <small class="text-muted">Designer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                </li>
+                <!-- START list title-->
+                <li class="p">
+                  <small class="text-muted">OFFLINE</small>
+                </li>
+                <!-- END list title-->
+                <li>
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0">
+                    <span class="pull-right">
+                                 <span class="circle circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/09.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Lawrence Robinson</strong>
+                                    <br>
+                                    <small class="text-muted">Developer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0">
+                    <span class="pull-right">
+                                 <span class="circle circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/10.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Tyrone Owens</strong>
+                                    <br>
+                                    <small class="text-muted">Designer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                </li>
+                <li>
+                  <div class="p-lg text-center">
+                    <!-- Optional link to list more users-->
+                    <a href="#" title="See more contacts" class="btn btn-purple btn-sm">
+                      <strong>Load more..</strong>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+              <!-- Extra items-->
+              <div class="p">
+                <p>
+                  <small class="text-muted">Tasks completion</small>
+                </p>
+                <div class="progress progress-xs m0">
+                  <div role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-success progress-80">
+                    <span class="sr-only">80% Complete</span>
+                  </div>
+                </div>
+              </div>
+              <div class="p">
+                <p>
+                  <small class="text-muted">Upload quota</small>
+                </p>
+                <div class="progress progress-xs m0">
+                  <div role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-warning progress-40">
+                    <span class="sr-only">40% Complete</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- END Off Sidebar (right)-->
+    </aside>
+    <!-- Main section-->
+    <section>
+      <!-- Page content-->
+      <div class="content-wrapper">
+        <div class="content-heading">
+          <ol class="breadcrumb pull-right">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Observations</a></li>
+            <li class="active">Species observation</li>
+          </ol>
+          Species observation
+        </div>
+        <!-- START widgets box-->
+        <div class="container">
+          <div class="row page-actions">
+            <div class="col-md-6">
+              <ul class="nav pull-left btn-group" role="tablist">
+                <li role="presentation" class="btn btn-default active">
+                  <a href="#list" aria-controls="home" role="tab" data-toggle="tab">List View</a>
+                </li>
+                <li role="presentation" class="btn btn-default">
+                  <a href="#map" aria-controls="profile" role="tab" data-toggle="tab">Map View</a>
+                </li>
+                <li role="presentation" class="btn btn-default">
+                  <a href="#gallery" aria-controls="profile" role="tab" data-toggle="tab">Gallery View</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <div class="pull-right">
+                <button type="button" class="btn btn-labeled btn-primary">
+                  <span class="btn-label"><i class="fa fa-filter"></i></span> Filter
+                </button>
+              </div>
+              <div class="pull-right col-md-6">
+                <div class="input-copy input-group">
+                  <input type="text" value="" placeholder='Search' class="form-control">
+                  <span class="input-group-btn">
+                    <button class="btn btn-secondary" type="button"><i class="fa fa-search"></i></button>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-content tab-content-nostyle">
+            <div role="tabpanel" class="tab-pane active" id="list">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="panel panel-default">
+                    <div class="panel-heading"><div class="panel-title">
+                     <div class="btn-group mr-sm">
+                         <a data-toggle="dropdown" class="dropdown-toggle" aria-expanded="false"><i class="fa fa-gear"></i></a>
+                         <ul role="menu" class="dropdown-menu">
+                            <li><a href="#"><i class="fa fa-check fa-fw"></i>Column 1</a></li>
+                            <li><a href="#"><i class="fa fa-check fa-fw"></i>Column 2</a></li>
+                            <li><a href="#"><i class="fa fa-check fa-fw"></i>Column 3</a></li>
+                            <li><a href="#"><i class="fa fa-check fa-fw"></i>Column 4</a></li>
+                            <li><a href="#"><i class="fa fa-fw"></i>Column 5</a></li>
+                            <li><a href="#"><i class="fa fa-fw"></i>Column 6</a></li>
+                            <li><a href="#"><i class="fa fa-fw"></i>Column 7</a></li>
+                            <li><a href="#"><i class="fa fa-fw"></i>Column 8</a></li>
+                         </ul>
+                      </div>
+                      Species observation
+                    </div></div>
+                    <div class="panel-body pt0">
+                        <div class="table-with-actions">
+                          <div class="table-with-actions__container-table">
+                            <table class="table table-hover">
+                              <thead>
+                                <tr>
+                                  <th>What species did you see? </th>
+                                  <th>Number of individuals </th>
+                                  <th>Did you observe alone?</th>
+                                  <th>User</th>
+                                  <th>Timestamp</th>
+                                  <th>Date/time</th>
+                                  <th>Label</th>
+                                  <th>Timestamp</th>
+                                  <th>Date/time</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>Raven</td>
+                                  <td>2</td>
+                                  <td>Yes</td>
+                                  <td>Niels Holst</td>
+                                  <td>2012/11/19 14:30:11 (GMT +1:00)</td>
+                                  <td>2012/11/19</td>
+                                  <td><span class="label label-danger label-transparent">Color</span></td>
+                                  <td>2014/11/44 01:99 (GMT +0:50)</td>
+                                  <td>2014/22/22</td>
+                                </tr>
+                                <tr>
+                                  <td>Bunny</td>
+                                  <td>54</td>
+                                  <td>No</td>
+                                  <td>Ivan Siniak</td>
+                                  <td>2012/11/22 17:14:22 (GMT +3:00)</td>
+                                  <td>2012/11/22</td>
+                                  <td><span class="label label-primary label-transparent">Blue</span></td>
+                                  <td>2014/11/44 01:99 (GMT +0:50)</td>
+                                  <td>2014/22/22</td>
+                                </tr>
+                                <tr>
+                                  <td>Horse</td>
+                                  <td>12</td>
+                                  <td>No</td>
+                                  <td>Iakov Markov</td>
+                                  <td>2012/11/29 19:45 (GMT +1:00)</td>
+                                  <td>2012/11/29</td>
+                                  <td><span class="label label-warning label-transparent">Attention!</span></td>
+                                  <td>2014/11/44 01:99 (GMT +0:50)</td>
+                                  <td>2014/22/22</td>
+                                </tr>
+                                <tr>
+                                  <td>Bear</td>
+                                  <td>1</td>
+                                  <td>Yes</td>
+                                  <td>Ivan Siniak</td>
+                                  <td>2013/01/02 06:00:43 (GMT +3:00)</td>
+                                  <td>2013/01/02</td>
+                                  <td><span class="label label-danger label-transparent">Color</span></td>
+                                  <td>2014/11/44 01:99 (GMT +0:50)</td>
+                                  <td>2014/22/22</td>
+                                </tr>
+                                <tr>
+                                  <td>Raven</td>
+                                  <td>2</td>
+                                  <td>Yes</td>
+                                  <td>Niels Holst</td>
+                                  <td>2012/11/19 14:30:11 (GMT +1:00)</td>
+                                  <td>2012/11/19</td>
+                                  <td><span class="label label-primary label-transparent">Blue</span></td>
+                                  <td>2014/11/44 01:99 (GMT +0:50)</td>
+                                  <td>2014/22/22</td>
+                                </tr>
+                                <tr>
+                                  <td>Bunny</td>
+                                  <td>54</td>
+                                  <td>No</td>
+                                  <td>Ivan Siniak</td>
+                                  <td>2012/11/22 17:14:22 (GMT +3:00)</td>
+                                  <td>2012/11/22</td>
+                                  <td><span class="label label-primary label-transparent">Blue</span></td>
+                                  <td>2014/11/44 01:99 (GMT +0:50)</td>
+                                  <td>2014/22/22</td>
+                                </tr>
+                                <tr>
+                                  <td>Horse</td>
+                                  <td>12</td>
+                                  <td>No</td>
+                                  <td>Iakov Markov</td>
+                                  <td>2012/11/29 19:45 (GMT +1:00)</td>
+                                  <td>2012/11/29</td>
+                                  <td><span class="label label-warning label-transparent">Attention!</span></td>
+                                  <td>2014/11/44 01:99 (GMT +0:50)</td>
+                                  <td>2014/22/22</td>
+                                </tr>
+                                <tr>
+                                  <td>Bear</td>
+                                  <td>1</td>
+                                  <td>Yes</td>
+                                  <td>Ivan Siniak</td>
+                                  <td>2013/01/02 06:00:43 (GMT +3:00)</td>
+                                  <td>2013/01/02</td>
+                                  <td><span class="label label-success label-transparent">All ok!</span></td>
+                                  <td>2014/11/44 01:99 (GMT +0:50)</td>
+                                  <td>2014/22/22</td>
+                                </tr>
+                                <tr>
+                                  <td>Raven</td>
+                                  <td>2</td>
+                                  <td>Yes</td>
+                                  <td>Niels Holst</td>
+                                  <td>2012/11/19 14:30:11 (GMT +1:00)</td>
+                                  <td>2012/11/19</td>
+                                  <td><span class="label label-primary label-transparent">Blue</span></td>
+                                  <td>2014/11/44 01:99 (GMT +0:50)</td>
+                                  <td>2014/22/22</td>
+                                </tr>
+                                <tr>
+                                  <td>Bunny</td>
+                                  <td>54</td>
+                                  <td>No</td>
+                                  <td>Ivan Siniak</td>
+                                  <td>2012/11/22 17:14:22 (GMT +3:00)</td>
+                                  <td>2012/11/22</td>
+                                  <td><span class="label label-primary label-transparent">Blue</span></td>
+                                  <td>2014/11/44 01:99 (GMT +0:50)</td>
+                                  <td>2014/22/22</td>
+                                </tr>
+                                <tr>
+                                  <td>Horse</td>
+                                  <td>12</td>
+                                  <td>No</td>
+                                  <td>Iakov Markov</td>
+                                  <td>2012/11/29 19:45 (GMT +1:00)</td>
+                                  <td>2012/11/29</td>
+                                  <td><span class="label label-primary label-transparent">Blue</span></td>
+                                  <td>2014/11/44 01:99 (GMT +0:50)</td>
+                                  <td>2014/22/22</td>
+                                </tr>
+                                <tr>
+                                  <td>Bear</td>
+                                  <td>1</td>
+                                  <td>Yes</td>
+                                  <td>Ivan Siniak</td>
+                                  <td>2013/01/02 06:00:43 (GMT +3:00)</td>
+                                  <td>2013/01/02</td>
+                                  <td><span class="label label-success label-transparent">All ok!</span></td>
+                                  <td>2014/11/44 01:99 (GMT +0:50)</td>
+                                  <td>2014/22/22</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <div class="table-with-actions__container-actions">
+                            <table class="table table-hover">
+                              <thead>
+                                <tr>
+                                  <th>Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    <div class="btn-group">
+                                      <a href="observation_view.html" type="button" class="btn btn-outline btn-default"><i class="fa fa-fw fa-search"></i></a>
+                                      <a href="observation_edit.html" class="btn btn-outline btn-default"><i class="fa fa-fw fa-pencil"></i></a>
+                                      <button type="button" class="btn btn-outline btn-danger"><i class="fa fa-fw fa-trash"></i></button>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="btn-group">
+                                      <a href="observation_view.html" type="button" class="btn btn-outline btn-default"><i class="fa fa-fw fa-search"></i></a>
+                                      <a href="observation_edit.html" class="btn btn-outline btn-default"><i class="fa fa-fw fa-pencil"></i></a>
+                                      <button type="button" class="btn btn-outline btn-danger"><i class="fa fa-fw fa-trash"></i></button>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="btn-group">
+                                      <a href="observation_view.html" type="button" class="btn btn-outline btn-default"><i class="fa fa-fw fa-search"></i></a>
+                                      <a href="observation_edit.html" class="btn btn-outline btn-default"><i class="fa fa-fw fa-pencil"></i></a>
+                                      <button type="button" class="btn btn-outline btn-danger"><i class="fa fa-fw fa-trash"></i></button>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="btn-group">
+                                      <a href="observation_view.html" type="button" class="btn btn-outline btn-default"><i class="fa fa-fw fa-search"></i></a>
+                                      <a href="observation_edit.html" class="btn btn-outline btn-default"><i class="fa fa-fw fa-pencil"></i></a>
+                                      <button type="button" class="btn btn-outline btn-danger"><i class="fa fa-fw fa-trash"></i></button>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="btn-group">
+                                      <a href="observation_view.html" type="button" class="btn btn-outline btn-default"><i class="fa fa-fw fa-search"></i></a>
+                                      <a href="observation_edit.html" class="btn btn-outline btn-default"><i class="fa fa-fw fa-pencil"></i></a>
+                                      <button type="button" class="btn btn-outline btn-danger"><i class="fa fa-fw fa-trash"></i></button>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="btn-group">
+                                      <a href="observation_view.html" type="button" class="btn btn-outline btn-default"><i class="fa fa-fw fa-search"></i></a>
+                                      <a href="observation_edit.html" class="btn btn-outline btn-default"><i class="fa fa-fw fa-pencil"></i></a>
+                                      <button type="button" class="btn btn-outline btn-danger"><i class="fa fa-fw fa-trash"></i></button>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="btn-group">
+                                      <a href="observation_view.html" type="button" class="btn btn-outline btn-default"><i class="fa fa-fw fa-search"></i></a>
+                                      <a href="observation_edit.html" class="btn btn-outline btn-default"><i class="fa fa-fw fa-pencil"></i></a>
+                                      <button type="button" class="btn btn-outline btn-danger"><i class="fa fa-fw fa-trash"></i></button>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="btn-group">
+                                      <a href="observation_view.html" type="button" class="btn btn-outline btn-default"><i class="fa fa-fw fa-search"></i></a>
+                                      <a href="observation_edit.html" class="btn btn-outline btn-default"><i class="fa fa-fw fa-pencil"></i></a>
+                                      <button type="button" class="btn btn-outline btn-danger"><i class="fa fa-fw fa-trash"></i></button>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="btn-group">
+                                      <a href="observation_view.html" type="button" class="btn btn-outline btn-default"><i class="fa fa-fw fa-search"></i></a>
+                                      <a href="observation_edit.html" class="btn btn-outline btn-default"><i class="fa fa-fw fa-pencil"></i></a>
+                                      <button type="button" class="btn btn-outline btn-danger"><i class="fa fa-fw fa-trash"></i></button>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="btn-group">
+                                      <a href="observation_view.html" type="button" class="btn btn-outline btn-default"><i class="fa fa-fw fa-search"></i></a>
+                                      <a href="observation_edit.html" class="btn btn-outline btn-default"><i class="fa fa-fw fa-pencil"></i></a>
+                                      <button type="button" class="btn btn-outline btn-danger"><i class="fa fa-fw fa-trash"></i></button>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="btn-group">
+                                      <a href="observation_view.html" type="button" class="btn btn-outline btn-default"><i class="fa fa-fw fa-search"></i></a>
+                                      <a href="observation_edit.html" class="btn btn-outline btn-default"><i class="fa fa-fw fa-pencil"></i></a>
+                                      <button type="button" class="btn btn-outline btn-danger"><i class="fa fa-fw fa-trash"></i></button>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <div class="btn-group">
+                                      <a href="observation_view.html" type="button" class="btn btn-outline btn-default"><i class="fa fa-fw fa-search"></i></a>
+                                      <a href="observation_edit.html" class="btn btn-outline btn-default"><i class="fa fa-fw fa-pencil"></i></a>
+                                      <button type="button" class="btn btn-outline btn-danger"><i class="fa fa-fw fa-trash"></i></button>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <nav>
+                    <ul class="pagination m0 pull-right">
+                      <li>
+                        <a href="#" aria-label="Previous">
+                          <span aria-hidden="true">«</span>
+                        </a>
+                      </li>
+                      <li class="active"><a href="#">1</a>
+                      </li>
+                      <li><a href="#">2</a>
+                      </li>
+                      <li><a href="#">3</a>
+                      </li>
+                      <li><a href="#">4</a>
+                      </li>
+                      <li><a href="#">5</a>
+                      </li>
+                      <li>
+                        <a href="#" aria-label="Next">
+                          <span aria-hidden="true">»</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="map">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="panel panel-default">
+                    <div class="panel-heading"><div class="panel-title">Species observation</div></div>
+                    <div class="panel-body pt0">
+                      <div id="vector-map" data-vector-map="" data-height="300" data-scale="0" data-map-name="world_mill_en"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="gallery">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="panel panel-default">
+                    <div class="panel-heading"><div class="panel-title">Species observation</div></div>
+                    <div class="panel-body pt0">
+                      <div class="row">
+                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                          <a class="thumbnail" href="observation_view.html">
+                            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                          </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                          <a class="thumbnail" href="observation_view.html">
+                            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                          </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                          <a class="thumbnail" href="observation_view.html">
+                            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                          </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                          <a class="thumbnail" href="observation_view.html">
+                            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                          </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                          <a class="thumbnail" href="observation_view.html">
+                            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                          </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                          <a class="thumbnail" href="observation_view.html">
+                            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                          </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                          <a class="thumbnail" href="observation_view.html">
+                            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                          </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                          <a class="thumbnail" href="observation_view.html">
+                            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                          </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                          <a class="thumbnail" href="observation_view.html">
+                            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                          </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                          <a class="thumbnail" href="observation_view.html">
+                            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                          </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                          <a class="thumbnail" href="observation_view.html">
+                            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                          </a>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                          <a class="thumbnail" href="observation_view.html">
+                            <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+                          </a>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END widgets box-->
+      </div>
+    </section>
+    <!-- Page footer-->
+    <footer>
+      <span>&copy; 2016 - ViewWorld</span>
+    </footer>
+  </div>
+  <!-- =============== VENDOR SCRIPTS ===============-->
+  <!-- MODERNIZR-->
+  <script src="../vendor/modernizr/modernizr.custom.js"></script>
+  <!-- MATCHMEDIA POLYFILL-->
+  <script src="../vendor/matchMedia/matchMedia.js"></script>
+  <!-- JQUERY-->
+  <script src="../vendor/jquery/dist/jquery.js"></script>
+  <!-- BOOTSTRAP-->
+  <script src="../vendor/bootstrap/dist/js/bootstrap.js"></script>
+  <!-- STORAGE API-->
+  <script src="../vendor/jQuery-Storage-API/jquery.storageapi.js"></script>
+  <!-- JQUERY EASING-->
+  <script src="../vendor/jquery.easing/js/jquery.easing.js"></script>
+  <!-- ANIMO-->
+  <script src="../vendor/animo.js/animo.js"></script>
+  <!-- SLIMSCROLL-->
+  <script src="../vendor/slimScroll/jquery.slimscroll.min.js"></script>
+  <!-- SCREENFULL-->
+  <script src="../vendor/screenfull/dist/screenfull.js"></script>
+  <!-- LOCALIZE-->
+  <script src="../vendor/jquery-localize-i18n/dist/jquery.localize.js"></script>
+  <!-- RTL demo-->
+  <script src="js/demo/demo-rtl.js"></script>
+  <!-- =============== PAGE VENDOR SCRIPTS ===============-->
+  <!-- JQUERY STEPS-->
+  <script src="../vendor/jquery.steps/build/jquery.steps.js"></script>
+  <!-- VECTOR MAP-->
+  <script src="../vendor/ika.jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+  <script src="../vendor/ika.jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+  <script src="../vendor/ika.jvectormap/jquery-jvectormap-us-mill-en.js"></script>
+  <script src="js/demo/demo-vector-map.js"></script>
+  <!-- =============== APP SCRIPTS ===============-->
+  <script src="js/app.js"></script>
+  <script>
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+      $('#vector-map').replaceWith('<div id="vector-map" data-vector-map="" data-height="300" data-scale="0" data-map-name="world_mill_en"></div>');
+      var $map = $('#vector-map');
+    
+      var seriesData = {
+        'CA': 11100,   // Canada
+        'DE': 2510,    // Germany
+        'FR': 3710,    // France
+        'AU': 5710,    // Australia
+        'GB': 8310,    // Great Britain
+        'RU': 9310,    // Russia
+        'BR': 6610,    // Brazil
+        'IN': 7810,    // India
+        'CN': 4310,    // China
+        'US': 839,     // USA
+        'SA': 410      // Saudi Arabia
+      };
+      
+      var markersData = [
+        { latLng:[41.90, 12.45],  name:'Vatican City'          },
+        { latLng:[43.73, 7.41],   name:'Monaco'                },
+        { latLng:[-0.52, 166.93], name:'Nauru'                 },
+        { latLng:[-8.51, 179.21], name:'Tuvalu'                },
+        { latLng:[7.11,171.06],   name:'Marshall Islands'      },
+        { latLng:[17.3,-62.73],   name:'Saint Kitts and Nevis' },
+        { latLng:[3.2,73.22],     name:'Maldives'              },
+        { latLng:[35.88,14.5],    name:'Malta'                 },
+        { latLng:[41.0,-71.06],   name:'New England'           },
+        { latLng:[12.05,-61.75],  name:'Grenada'               },
+        { latLng:[13.16,-59.55],  name:'Barbados'              },
+        { latLng:[17.11,-61.85],  name:'Antigua and Barbuda'   },
+        { latLng:[-4.61,55.45],   name:'Seychelles'            },
+        { latLng:[7.35,134.46],   name:'Palau'                 },
+        { latLng:[42.5,1.51],     name:'Andorra'               }
+      ];
+
+      new VectorMap($map, seriesData, markersData);
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1 maximum-scale=1">
+  <meta name="description" content="Bootstrap Admin App + jQuery">
+  <meta name="keywords" content="app responsive jquery bootstrap dashboard admin">
+  <title>Organisations - ViewWorld</title>
+  <!-- =============== VENDOR STYLES ===============-->
+  <!-- FONT AWESOME-->
+  <link rel="stylesheet" href="../vendor/fontawesome/css/font-awesome.min.css">
+  <!-- SIMPLE LINE ICONS-->
+  <link rel="stylesheet" href="../vendor/simple-line-icons/css/simple-line-icons.css">
+  <!-- ANIMATE.CSS-->
+  <link rel="stylesheet" href="../vendor/animate.css/animate.min.css">
+  <!-- WHIRL (spinners)-->
+  <link rel="stylesheet" href="../vendor/whirl/dist/whirl.css">
+  <!-- =============== PAGE VENDOR STYLES ===============-->
+  <!-- WEATHER ICONS-->
+  <link rel="stylesheet" href="../vendor/weather-icons/css/weather-icons.min.css">
+  <!-- =============== BOOTSTRAP STYLES ===============-->
+  <link rel="stylesheet" href="css/bootstrap.css" id="bscss">
+  <!-- =============== APP STYLES ===============-->
+  <link rel="stylesheet" href="css/app.css" id="maincss">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- top navbar-->
+    <header class="topnavbar-wrapper">
+      <!-- START Top Navbar-->
+      <nav role="navigation" class="navbar topnavbar">
+        <!-- START navbar header-->
+        <div class="navbar-header">
+          <a href="#/" class="navbar-brand">
+            <div class="brand-logo">
+              <img src="http://52.30.179.235/assets/viewworld-logo.png" alt="App Logo" class="img-responsive">
+            </div>
+            <div class="brand-logo-collapsed">
+              <img src="img/logo-single.png" alt="App Logo" class="img-responsive">
+            </div>
+          </a>
+        </div>
+        <!-- END navbar header-->
+        <!-- START Nav wrapper-->
+        <div class="nav-wrapper">
+          <!-- START Right Navbar-->
+          <ul class="nav navbar-nav navbar-right">
+            <!-- START Alert menu-->
+            <li class="dropdown dropdown-list">
+              <a href="#" data-toggle="dropdown">
+                <em class="icon-user"></em> Niels Holst
+              </a>
+              <!-- START Dropdown menu-->
+              <ul class="dropdown-menu animated fadeInUpShort">
+                <li>
+                  <!-- START list group-->
+                  <div class="list-group">
+                    <!-- list item-->
+                    <a href="profile.html" class="list-group-item">
+                      <div class="media-box">
+                        <div class="pull-left">
+                          <em class="fa fa-user fa-fw"></em>
+                        </div>
+                        <div class="media-box-body clearfix">
+                          <p class="center-vertical">My profile</p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <!-- END list group-->
+                </li>
+              </ul>
+              <!-- END Dropdown menu-->
+            </li>
+            <!-- END Alert menu-->
+            <!-- START Offsidebar button-->
+            <li>
+              <a href="#">
+                <em class="fa fa-power-off"></em>
+              </a>
+            </li>
+            <!-- END Offsidebar menu-->
+            <!-- START Offsidebar button-->
+            <li class="hidden">
+              <a href="#" data-toggle-state="offsidebar-open" data-no-persist="true">
+                <em class="icon-notebook"></em>
+              </a>
+            </li>
+            <!-- END Offsidebar menu-->
+          </ul>
+          <!-- END Right Navbar-->
+        </div>
+        <!-- END Nav wrapper-->
+      </nav>
+      <!-- END Top Navbar-->
+    </header>
+    <!-- sidebar-->
+    <aside class="aside">
+      <!-- START Sidebar (left)-->
+      <div class="aside-inner">
+        <nav data-sidebar-anyclick-close="" class="sidebar">
+          <!-- START sidebar nav-->
+          <ul class="nav">
+            <!-- Iterates over all sidebar items-->
+            <li>
+              <a href="index.html" title="Dashboard">
+                <em class="icon-speedometer"></em>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-heading ">
+              <span>Manage</span>
+            </li>
+            <li class=" ">
+              <a href="users.html" title="Widgets">
+                <em class="fa fa-users"></em>
+                <span>Users</span>
+              </a>
+            </li>
+            <li class="active">
+              <a href="organisations.html" title="Widgets">
+                <em class="fa fa-building"></em>
+                <span>Organisations</span>
+              </a>
+            </li>
+          </ul>
+          <!-- END sidebar nav-->
+        </nav>
+      </div>
+      <!-- END Sidebar (left)-->
+    </aside>
+    <!-- offsidebar-->
+    <aside class="offsidebar hide">
+      <!-- START Off Sidebar (right)-->
+      <nav>
+        <div role="tabpanel">
+          <!-- Nav tabs-->
+          <ul role="tablist" class="nav nav-tabs nav-justified">
+            <li role="presentation" class="active">
+              <a href="#app-settings" aria-controls="app-settings" role="tab" data-toggle="tab">
+                <em class="icon-equalizer fa-lg"></em>
+              </a>
+            </li>
+            <li role="presentation">
+              <a href="#app-chat" aria-controls="app-chat" role="tab" data-toggle="tab">
+                <em class="icon-user fa-lg"></em>
+              </a>
+            </li>
+          </ul>
+          <!-- Tab panes-->
+          <div class="tab-content">
+            <div id="app-settings" role="tabpanel" class="tab-pane fade in active">
+              <h3 class="text-center text-thin">Settings</h3>
+              <div class="p">
+                <h4 class="text-muted text-thin">Themes</h4>
+                <div class="table-grid mb">
+                  <div class="col mb">
+                    <div class="setting-color">
+                      <label data-load-css="css/theme-a.css">
+                        <input type="radio" name="setting-theme" checked="checked">
+                        <span class="icon-check"></span>
+                        <span class="split">
+                                       <span class="color bg-info"></span>
+                        <span class="color bg-info-light"></span>
+                        </span>
+                        <span class="color bg-white"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col mb">
+                    <div class="setting-color">
+                      <label data-load-css="css/theme-b.css">
+                        <input type="radio" name="setting-theme">
+                        <span class="icon-check"></span>
+                        <span class="split">
+                                       <span class="color bg-green"></span>
+                        <span class="color bg-green-light"></span>
+                        </span>
+                        <span class="color bg-white"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col mb">
+                    <div class="setting-color">
+                      <label data-load-css="css/theme-c.css">
+                        <input type="radio" name="setting-theme">
+                        <span class="icon-check"></span>
+                        <span class="split">
+                                       <span class="color bg-purple"></span>
+                        <span class="color bg-purple-light"></span>
+                        </span>
+                        <span class="color bg-white"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col mb">
+                    <div class="setting-color">
+                      <label data-load-css="css/theme-d.css">
+                        <input type="radio" name="setting-theme">
+                        <span class="icon-check"></span>
+                        <span class="split">
+                                       <span class="color bg-danger"></span>
+                        <span class="color bg-danger-light"></span>
+                        </span>
+                        <span class="color bg-white"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="table-grid mb">
+                  <div class="col mb">
+                    <div class="setting-color">
+                      <label data-load-css="css/theme-e.css">
+                        <input type="radio" name="setting-theme">
+                        <span class="icon-check"></span>
+                        <span class="split">
+                                       <span class="color bg-info-dark"></span>
+                        <span class="color bg-info"></span>
+                        </span>
+                        <span class="color bg-gray-dark"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col mb">
+                    <div class="setting-color">
+                      <label data-load-css="css/theme-f.css">
+                        <input type="radio" name="setting-theme">
+                        <span class="icon-check"></span>
+                        <span class="split">
+                                       <span class="color bg-green-dark"></span>
+                        <span class="color bg-green"></span>
+                        </span>
+                        <span class="color bg-gray-dark"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col mb">
+                    <div class="setting-color">
+                      <label data-load-css="css/theme-g.css">
+                        <input type="radio" name="setting-theme">
+                        <span class="icon-check"></span>
+                        <span class="split">
+                                       <span class="color bg-purple-dark"></span>
+                        <span class="color bg-purple"></span>
+                        </span>
+                        <span class="color bg-gray-dark"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col mb">
+                    <div class="setting-color">
+                      <label data-load-css="css/theme-h.css">
+                        <input type="radio" name="setting-theme">
+                        <span class="icon-check"></span>
+                        <span class="split">
+                                       <span class="color bg-danger-dark"></span>
+                        <span class="color bg-danger"></span>
+                        </span>
+                        <span class="color bg-gray-dark"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="p">
+                <h4 class="text-muted text-thin">Layout</h4>
+                <div class="clearfix">
+                  <p class="pull-left">Fixed</p>
+                  <div class="pull-right">
+                    <label class="switch">
+                      <input id="chk-fixed" type="checkbox" data-toggle-state="layout-fixed">
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="clearfix">
+                  <p class="pull-left">Boxed</p>
+                  <div class="pull-right">
+                    <label class="switch">
+                      <input id="chk-boxed" type="checkbox" data-toggle-state="layout-boxed">
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="clearfix">
+                  <p class="pull-left">RTL</p>
+                  <div class="pull-right">
+                    <label class="switch">
+                      <input id="chk-rtl" type="checkbox">
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="p">
+                <h4 class="text-muted text-thin">Aside</h4>
+                <div class="clearfix">
+                  <p class="pull-left">Collapsed</p>
+                  <div class="pull-right">
+                    <label class="switch">
+                      <input id="chk-collapsed" type="checkbox" data-toggle-state="aside-collapsed">
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="clearfix">
+                  <p class="pull-left">Float</p>
+                  <div class="pull-right">
+                    <label class="switch">
+                      <input id="chk-float" type="checkbox" data-toggle-state="aside-float">
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="clearfix">
+                  <p class="pull-left">Hover</p>
+                  <div class="pull-right">
+                    <label class="switch">
+                      <input id="chk-hover" type="checkbox" data-toggle-state="aside-hover">
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+                <div class="clearfix">
+                  <p class="pull-left">Show Scrollbar</p>
+                  <div class="pull-right">
+                    <label class="switch">
+                      <input id="chk-hover" type="checkbox" data-toggle-state="show-scrollbar" data-target=".sidebar">
+                      <span></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="app-chat" role="tabpanel" class="tab-pane fade">
+              <h3 class="text-center text-thin">Connections</h3>
+              <ul class="nav">
+                <!-- START list title-->
+                <li class="p">
+                  <small class="text-muted">ONLINE</small>
+                </li>
+                <!-- END list title-->
+                <li>
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0">
+                    <span class="pull-right">
+                                 <span class="circle circle-success circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/05.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Juan Sims</strong>
+                                    <br>
+                                    <small class="text-muted">Designeer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0">
+                    <span class="pull-right">
+                                 <span class="circle circle-success circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/06.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Maureen Jenkins</strong>
+                                    <br>
+                                    <small class="text-muted">Designeer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0">
+                    <span class="pull-right">
+                                 <span class="circle circle-danger circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/07.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Billie Dunn</strong>
+                                    <br>
+                                    <small class="text-muted">Designeer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0">
+                    <span class="pull-right">
+                                 <span class="circle circle-warning circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/08.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Tomothy Roberts</strong>
+                                    <br>
+                                    <small class="text-muted">Designer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                </li>
+                <!-- START list title-->
+                <li class="p">
+                  <small class="text-muted">OFFLINE</small>
+                </li>
+                <!-- END list title-->
+                <li>
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0">
+                    <span class="pull-right">
+                                 <span class="circle circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/09.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Lawrence Robinson</strong>
+                                    <br>
+                                    <small class="text-muted">Developer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0">
+                    <span class="pull-right">
+                                 <span class="circle circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/10.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Tyrone Owens</strong>
+                                    <br>
+                                    <small class="text-muted">Designer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                </li>
+                <li>
+                  <div class="p-lg text-center">
+                    <!-- Optional link to list more users-->
+                    <a href="#" title="See more contacts" class="btn btn-purple btn-sm">
+                      <strong>Load more..</strong>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+              <!-- Extra items-->
+              <div class="p">
+                <p>
+                  <small class="text-muted">Tasks completion</small>
+                </p>
+                <div class="progress progress-xs m0">
+                  <div role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-success progress-80">
+                    <span class="sr-only">80% Complete</span>
+                  </div>
+                </div>
+              </div>
+              <div class="p">
+                <p>
+                  <small class="text-muted">Upload quota</small>
+                </p>
+                <div class="progress progress-xs m0">
+                  <div role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-warning progress-40">
+                    <span class="sr-only">40% Complete</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- END Off Sidebar (right)-->
+    </aside>
+    <!-- Main section-->
+    <section>
+      <!-- Page content-->
+      <div class="content-wrapper">
+        <div class="content-heading">
+          <ol class="breadcrumb pull-right">
+            <li><a href="#">Home</a></li>
+            <li class="active">Organisation</li>
+          </ol>
+          Organisation
+        </div>
+        <!-- START widgets box-->
+        <div class="container">
+          <div class="row page-actions">
+            <div class="col-md-12">
+              <ul class="nav pull-left btn-group" role="tablist">
+                <li role="presentation" class="btn btn-default active">
+                  <a href="#info" aria-controls="profile" role="tab" data-toggle="tab">Info</a>
+                </li>
+                <li role="presentation" class="btn btn-default ">
+                  <a href="#billing" aria-controls="profile" role="tab" data-toggle="tab">Billing</a>
+                </li>
+                <li role="presentation" class="btn btn-default">
+                  <a href="#users" aria-controls="profile" role="tab" data-toggle="tab">Users</a>
+                </li>
+                <li role="presentation" class="btn btn-default">
+                  <a href="#groups" aria-controls="profile" role="tab" data-toggle="tab">Groups</a>
+                </li>
+                <li role="presentation" class="btn btn-default">
+                  <a href="#log" aria-controls="profile" role="tab" data-toggle="tab">Log</a>
+                </li>
+                <li role="presentation" class="btn btn-default">
+                  <a href="#backups" aria-controls="profile" role="tab" data-toggle="tab">Backups</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="tab-content tab-content-nostyle">
+            <div role="tabpanel" class="tab-pane " id="subscription">
+              <div class="row">
+                <div class="col-md-12">
+                  <h3 class="mt0">Subscription</h3>
+                  <div class="panel panel-default">
+                    <div class="panel-body p0">
+                      <table class="table">
+                       <thead>
+                         <tr>
+                           <th>Summary</th>
+                           <th>Quantity</th>
+                           <th>Price</th>
+                           <th>Total per month</th>
+                         </tr>
+                       </thead>
+                       <tbody>
+                         <tr>
+                           <td>Users</td>
+                           <td>10</td>
+                           <td>10$ per 1</td>
+                           <td>100$</td>
+                         </tr>
+                         <tr>
+                           <td>Forms</td>
+                           <td>3</td>
+                           <td>30$ per 1</td>
+                           <td>90$</td>
+                         </tr>
+                         <tr>
+                           <td>Uploads per month</td>
+                           <td>200</td>
+                           <td>10$ per 10</td>
+                           <td>200$</td>
+                         </tr>
+                         <tr>
+                           <td colspan='3'><strong>Total</strong></td>
+                           <td><strong>390$</strong></td>
+                         </tr>
+                       </tbody>
+                     </table>
+                    </div>
+                    <div class="panel-footer clearfix">
+                      <div class="pull-right">
+                        <div class="checkbox-inline pt-sm mr-sm c-checkbox">
+                          <label>
+                            <input type="checkbox" checked="" value="">
+                            <span class="fa fa-check"></span>I agree with <a href="ya.ru">terms and conditions</a>.
+                          </label>
+                        </div>
+                        <button type="button" class="btn btn-labeled btn-primary ml-lg">
+                          <span class="btn-label"><i class="fa fa-check"></i></span>Apply changes
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="users">
+              <div class="row page-actions">
+                <div class="col-md-4">
+                  <h3 class="mt0">Users</h3>
+                </div>
+                <div class="col-md-8">
+                  <button type="button" class="btn btn-labeled btn-primary pull-right">
+                    <span class="btn-label"><i class="fa fa-plus"></i></span>Add user
+                  </button>
+                  <div class="form-inline display-inline ml-lg mr-lg pull-right">
+                    <div class="btn-group align-mid mr-sm">
+                       <button type="button" data-toggle="dropdown" class="btn dropdown-toggle btn-default">Filter by group
+                          <span class="caret"></span>
+                       </button>
+                       <ul role="menu" class="dropdown-menu">
+                          <li><a href="#">Developers</a></li>
+                          <li><a href="#">Office</a></li>
+                       </ul>
+                    </div>
+                    <div class="btn-group align-mid mr-sm">
+                       <button type="button" data-toggle="dropdown" class="btn dropdown-toggle btn-default">Filter by role
+                          <span class="caret"></span>
+                       </button>
+                       <ul role="menu" class="dropdown-menu">
+                          <li><a href="#">User</a></li>
+                          <li><a href="#">Manager</a></li>
+                       </ul>
+                    </div>
+                    <div class="input-group">
+                       <input type="text" class="form-control" placeholder="Search by name or email">
+                       <span class="input-group-btn">
+                          <button type="button" class="btn btn-default"><i class="fa fa-fw fa-search"></i></button>
+                       </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="panel panel-default">
+                    <div class="panel-body p0">
+                      <table class="table">
+                       <thead>
+                         <tr>
+                           <th>Name</th>
+                           <th>E-Mail</th>
+                           <th>Group</th>
+                           <th>Role</th>
+                           <th>Observations</th>
+                           <th style="width:110px;">Actions</th>
+                         </tr>
+                       </thead>
+                       <tbody>
+                         <tr>
+                           <td><img src="img/user/09.jpg" alt="Image" class="img-thumbnail img-circle thumb32 mr-sm"> Twa Kawawa</td>
+                           <td>kwa-kwa@gmail.com</td>
+                           <td></td>
+                           <td>Owner</td>
+                           <td>5</td>
+                           <td>
+                             <div class="btn-group pull-right">
+                              <button class="btn btn-outline btn-primary btn-sm">
+                                <i class="fa fa-fw fa-pencil"></i>
+                              </button>
+                            </div>
+                           </td>
+                         </tr>
+                         <tr>
+                           <td><img src="img/user/09.jpg" alt="Image" class="img-thumbnail img-circle thumb32 mr-sm"> Ivan Siniak</td>
+                           <td>ivnsnk@gmail.com</td>
+                           <td>Developers</td>
+                           <td>User</td>
+                           <td>5</td>
+                           <td>
+                             <div class="btn-group pull-right">
+                              <button class="btn btn-outline btn-primary btn-sm">
+                                <i class="fa fa-fw fa-pencil"></i>
+                              </button>
+                              <button type="button" class="btn btn-outline btn-danger btn-sm">
+                                <i class="fa fa-fw fa-trash"></i>
+                              </button>
+                            </div>
+                           </td>
+                         </tr>
+                         <tr>
+                           <td><img src="img/user/09.jpg" alt="Image" class="img-thumbnail img-circle thumb32 mr-sm"> Iakov Markov</td>
+                           <td>markov@fairpeopleonline.com</td>
+                           <td>Developers</td>
+                           <td>User</td>
+                           <td>1</td>
+                           <td>
+                             <div class="btn-group pull-right">
+                              <button class="btn btn-outline btn-primary btn-sm">
+                                <i class="fa fa-fw fa-pencil"></i>
+                              </button>
+                              <button type="button" class="btn btn-outline btn-danger btn-sm">
+                                <i class="fa fa-fw fa-trash"></i>
+                              </button>
+                            </div>
+                           </td>
+                         </tr>
+                         <tr>
+                           <td><img src="img/user/09.jpg" alt="Image" class="img-thumbnail img-circle thumb32 mr-sm"> Krystyna Ryspekova</td>
+                           <td>kr@fairpeople.com</td>
+                           <td>Office</td>
+                           <td>User</td>
+                           <td>14</td>
+                           <td>
+                             <div class="btn-group pull-right">
+                              <button class="btn btn-outline btn-primary btn-sm">
+                                <i class="fa fa-fw fa-pencil"></i>
+                              </button>
+                              <button type="button" class="btn btn-outline btn-danger btn-sm">
+                                <i class="fa fa-fw fa-trash"></i>
+                              </button>
+                            </div>
+                           </td>
+                         </tr>
+                         <tr>
+                           <td><img src="img/user/09.jpg" alt="Image" class="img-thumbnail img-circle thumb32 mr-sm"> Edgar Viter</td>
+                           <td>ev@fairpeople.com</td>
+                           <td>Office</td>
+                           <td>User</td>
+                           <td>19</td>
+                           <td>
+                             <div class="btn-group pull-right">
+                              <button class="btn btn-outline btn-primary btn-sm">
+                                <i class="fa fa-fw fa-pencil"></i>
+                              </button>
+                              <button type="button" class="btn btn-outline btn-danger btn-sm">
+                                <i class="fa fa-fw fa-trash"></i>
+                              </button>
+                            </div>
+                           </td>
+                         </tr>
+                       </tbody>
+                     </table>                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="groups">
+              <div class="row page-actions">
+                <div class="col-md-4">
+                  <h3 class="mt0">Groups</h3>
+                </div>
+                <div class="col-md-8">
+                  <button type="button" class="btn btn-labeled btn-primary pull-right">
+                    <span class="btn-label"><i class="fa fa-plus"></i></span>Add group
+                  </button>
+                  <div class="form-inline display-inline ml-lg mr-lg pull-right">
+                    <div class="input-group">
+                       <input type="text" class="form-control" placeholder="Search by name">
+                       <span class="input-group-btn">
+                          <button type="button" class="btn btn-default"><i class="fa fa-fw fa-search"></i></button>
+                       </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="panel panel-default">
+                    <div class="panel-body p0">
+                      <table class="table">
+                       <thead>
+                         <tr>
+                           <th>Name</th>
+                           <th>Users</th>
+                           <th style="width:110px;">Actions</th>
+                         </tr>
+                       </thead>
+                       <tbody>
+                         <tr>
+                           <td><span style="color:#1b72e2">Developers</span></td>
+                           <td>5</td>
+                           <td>
+                             <div class="btn-group pull-right">
+                              <button class="btn btn-outline btn-primary btn-sm">
+                                <i class="fa fa-fw fa-pencil"></i>
+                              </button>
+                              <button type="button" class="btn btn-outline btn-danger btn-sm">
+                                <i class="fa fa-fw fa-trash"></i>
+                              </button>
+                            </div>
+                           </td>
+                         </tr>
+                         <tr>
+                           <td>|—<span style="color:#1b72e2">Developers</span></td>
+                           <td>5</td>
+                           <td>
+                             <div class="btn-group pull-right">
+                              <button class="btn btn-outline btn-primary btn-sm">
+                                <i class="fa fa-fw fa-pencil"></i>
+                              </button>
+                              <button type="button" class="btn btn-outline btn-danger btn-sm">
+                                <i class="fa fa-fw fa-trash"></i>
+                              </button>
+                            </div>
+                           </td>
+                         </tr>
+                         <tr>
+                           <td>|—|—<span style="color:#1b72e2">Developers</span></td>
+                           <td>5</td>
+                           <td>
+                             <div class="btn-group pull-right">
+                              <button class="btn btn-outline btn-primary btn-sm">
+                                <i class="fa fa-fw fa-pencil"></i>
+                              </button>
+                              <button type="button" class="btn btn-outline btn-danger btn-sm">
+                                <i class="fa fa-fw fa-trash"></i>
+                              </button>
+                            </div>
+                           </td>
+                         </tr>
+                         <tr>
+                           <td><span style="color:#1b72e2">Office</span></td>
+                           <td>1</td>
+                           <td>
+                             <div class="btn-group pull-right">
+                              <button class="btn btn-outline btn-primary btn-sm">
+                                <i class="fa fa-fw fa-pencil"></i>
+                              </button>
+                              <button type="button" class="btn btn-outline btn-danger btn-sm">
+                                <i class="fa fa-fw fa-trash"></i>
+                              </button>
+                            </div>
+                           </td>
+                         </tr>
+                         <tr>
+                           <td>|—<span style="color:#1b72e2">Office</span></td>
+                           <td>1</td>
+                           <td>
+                             <div class="btn-group pull-right">
+                              <button class="btn btn-outline btn-primary btn-sm">
+                                <i class="fa fa-fw fa-pencil"></i>
+                              </button>
+                              <button type="button" class="btn btn-outline btn-danger btn-sm">
+                                <i class="fa fa-fw fa-trash"></i>
+                              </button>
+                            </div>
+                           </td>
+                         </tr>
+                         <tr>
+                           <td>|—|—<span style="color:#1b72e2">Office</span></td>
+                           <td>1</td>
+                           <td>
+                             <div class="btn-group pull-right">
+                              <button class="btn btn-outline btn-primary btn-sm">
+                                <i class="fa fa-fw fa-pencil"></i>
+                              </button>
+                              <button type="button" class="btn btn-outline btn-danger btn-sm">
+                                <i class="fa fa-fw fa-trash"></i>
+                              </button>
+                            </div>
+                           </td>
+                         </tr>
+                       </tbody>
+                     </table>  
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane active" id="info">
+              <div class="row page-actions">
+                <div class="col-md-12">
+                  <h3>Company info</h3>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Organisation</div>
+                    <div class="panel-body">
+                      <p><strong>Company name</strong>: Fairpeople</p>
+                      <p><strong>Country</strong>: Czechoslovakia</p>
+                      <p class="mb0"><strong>Website</strong>: <a href="#">fairpeople.com</a></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">Owner</div>
+                    <div class="panel-body">
+                      <p><strong>Name</strong>: Twa Kawawa</p>
+                      <p><strong>Email</strong>: kwa-kwa@mail.ru</p>
+                      <p class="mb0"><strong>Phone</strong>: +420 420 420 420</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="panel widget">
+                     <div class="row row-table row-flush">
+                        <div class="col-xs-6 bb br">
+                           <div class="row row-table row-flush">
+                              <div class="col-xs-4 text-center text-info">
+                                 <em class="fa icon-people fa-2x"></em>
+                              </div>
+                              <div class="col-xs-8">
+                                 <div class="panel-body text-center">
+                                    <h4 class="mt0">14k</h4>
+                                    <p class="mb0 text-muted">USERS</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-xs-6 bb">
+                           <div class="row row-table row-flush">
+                              <div class="col-xs-4 text-center text-danger">
+                                 <em class="fa icon-cloud-download fa-2x"></em>
+                              </div>
+                              <div class="col-xs-8">
+                                 <div class="panel-body text-center">
+                                    <h4 class="mt0">3.1 Gb</h4>
+                                    <p class="mb0 text-muted">STORAGE</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="row row-table row-flush">
+                        <div class="col-xs-6 br">
+                           <div class="row row-table row-flush">
+                              <div class="col-xs-4 text-center text-inverse">
+                                 <em class="fa fa-folder-o fa-2x"></em>
+                              </div>
+                              <div class="col-xs-8">
+                                 <div class="panel-body text-center">
+                                    <h4 class="mt0">150</h4>
+                                    <p class="mb0 text-muted">OBSERVATIONS</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-xs-6">
+                           <div class="row row-table row-flush">
+                              <div class="col-xs-4 text-center text-success">
+                                 <em class="fa fa-file-text-o fa-2x"></em>
+                              </div>
+                              <div class="col-xs-8">
+                                 <div class="panel-body text-center">
+                                    <h4 class="mt0">10</h4>
+                                    <p class="mb0 text-muted">FORMS</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div id="panelChart1" class="panel panel-default">
+                      <div class="panel-heading">
+                         <div class="panel-title">Uploads</div>
+                      </div>
+                      <div class="panel-body">
+                         <div class="chart-area flot-chart"></div>
+                      </div>
+                   </div>
+                </div>
+                <div class="col-md-6">
+                  <div id="panelChart1" class="panel panel-default">
+                      <div class="panel-heading">
+                         <div class="panel-title">Users</div>
+                      </div>
+                      <div class="panel-body">
+                         <div class="chart-area2 flot-chart"></div>
+                      </div>
+                   </div>
+                </div>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="log">
+              <div class="row page-actions">
+                <div class="col-md-4">
+                  <h3 class="mt0">Log</h3>
+                </div>
+                <div class="col-md-8 text-right">
+                  <select name="" id="" class="form-control  display-inline width-auto">
+                    <option value="">Billing</option>
+                    <option value="">Forms</option>
+                    <option value="">Users</option>
+                  </select>
+                  <div class="form-inline display-inline ml-lg">
+                    <div class="input-group">
+                       <input type="text" class="form-control" placeholder="Search by name">
+                       <span class="input-group-btn">
+                          <button type="button" class="btn btn-default"><i class="fa fa-fw fa-search"></i></button>
+                       </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="panel panel-default">
+                    <div class="panel-body p0">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Date&amp;Time</th>
+                            <th>Category</th>
+                            <th>User</th>
+                            <th>Activity</th>
+                          </tr>
+                        </thead>
+                       <tbody>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                         <tr>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>Forms</td>
+                           <td>ivnsnk</td>
+                           <td>Added new form "Demo Species Observations"</td>
+                         </tr>
+                       </tbody>
+                     </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="backups">
+              <div class="row page-actions">
+                <div class="col-md-4">
+                  <h3 class="mt0">Backups</h3>
+                </div>
+                <div class="col-md-8 text-right">
+                  
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="panel panel-default">
+                    <div class="panel-body p0">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Date</th>
+                            <th>Timestamp</th>
+                            <th>Size</th>
+                            <th>Observations</th>
+                            <th style="width: 110px">Actions</th>
+                          </tr>
+                        </thead>
+                       <tbody>
+                         <tr>
+                           <td>Yesterday</td>
+                           <td>21.12.2015 14:30:55 UTC +0</td>
+                           <td>32mb</td>
+                           <td>1</td>
+                           <td>
+                             <div class="btn-group pull-right">
+                              <button class="btn btn-outline btn-primary btn-sm popup" title="Restore">
+                                <i class="fa fa-fw fa-cloud-upload"></i>
+                              </button>
+                              <a href="http://download.thinkbroadband.com/1GB.zip" class="btn btn-outline btn-primary btn-sm" title="Download">
+                                <i class="fa fa-fw fa-download"></i>
+                              </a>
+                            </div>
+                           </td>
+                         </tr>
+                         <tr>
+                           <td>Two days ago</td>
+                           <td>20.12.2015 14:30:55 UTC +0</td>
+                           <td>32mb</td>
+                           <td>1</td>
+                           <td>
+                             <div class="btn-group pull-right">
+                              <button class="btn btn-outline btn-primary btn-sm popup" title="Restore">
+                                <i class="fa fa-fw fa-cloud-upload"></i>
+                              </button>
+                              <a href="http://download.thinkbroadband.com/1GB.zip" class="btn btn-outline btn-primary btn-sm" title="Download">
+                                <i class="fa fa-fw fa-download"></i>
+                              </a>
+                            </div>
+                           </td>
+                         </tr>
+                         <tr>
+                           <td>A week ago</td>
+                           <td>14.12.2015 14:30:55 UTC +0</td>
+                           <td>32mb</td>
+                           <td>1</td>
+                           <td>
+                             <div class="btn-group pull-right">
+                              <button class="btn btn-outline btn-primary btn-sm popup" title="Restore">
+                                <i class="fa fa-fw fa-cloud-upload"></i>
+                              </button>
+                              <a href="http://download.thinkbroadband.com/1GB.zip" class="btn btn-outline btn-primary btn-sm" title="Download">
+                                <i class="fa fa-fw fa-download"></i>
+                              </a>
+                            </div>
+                           </td>
+                         </tr>
+                         <tr>
+                           <td>A month ago</td>
+                           <td>21.11 .2015 14:30:55 UTC +0</td>
+                           <td>32mb</td>
+                           <td>1</td>
+                           <td>
+                             <div class="btn-group pull-right">
+                              <button class="btn btn-outline btn-primary btn-sm popup" title="Restore">
+                                <i class="fa fa-fw fa-cloud-upload"></i>
+                              </button>
+                              <a href="http://download.thinkbroadband.com/1GB.zip" class="btn btn-outline btn-primary btn-sm" title="Download">
+                                <i class="fa fa-fw fa-download"></i>
+                              </a>
+                            </div>
+                           </td>
+                         </tr>
+                       </tbody>
+                     </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane " id="billing">
+              <div class="row page-actions">
+                <div class="col-md-12">
+                  <h3>Billing</h3>
+                </div>
+              </div>
+              <div class="row">
+
+                <div class="col-md-4">
+                  <div class="panel widget mb-lg">
+                     <div class="row row-table row-flush">
+                        <div class="col-xs-4 bg-info text-center">
+                           <em class="fa fa-users fa-2x"></em>
+                        </div>
+                        <div class="col-xs-8">
+                           <div class="panel-body text-center">
+                              <h4 class="mt0">30</h4>
+                              <p class="mb0 text-muted">USERS</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="panel widget">
+                     <div class="row row-table row-flush">
+                        <div class="col-xs-4 bg-info text-center">
+                           <em class="fa fa-money fa-2x"></em>
+                        </div>
+                        <div class="col-xs-8">
+                           <div class="panel-body text-center">
+                              <h4 class="mt0">300$</h4>
+                              <p class="mb0 text-muted">NEXT INVOICE</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                </div>
+
+                <div class="col-md-8">
+                    <div id="panelChart2" class="panel panel-default">
+                      <div class="panel-body">
+                         <div class="chart-bar flot-chart" style="height: 143px"></div>
+                      </div>
+                   </div>
+                </div>
+
+              </div>
+              <div class="row">
+                <div class="col-md-6"><h3 class="mt0">Payment methods</h3></div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                   <div class="panel panel-default">
+                      <div class="panel-body p0">
+                         <table class="table">
+                           <thead>
+                             <tr>
+                               <th>Card</th>
+                               <th>Name</th>
+                               <th>Expires on</th>
+                               <th style="width: 270px;"><span class="pull-right">Actions</span></th>
+                             </tr>
+                           </thead>
+                           <tbody>
+                             <tr>
+                               <td><img src="img/visa.png" alt="" class="mr-sm"> Ends on 5501</td>
+                               <td>Mark Schmidt</td>
+                               <td>05/16</td>
+                               <td>
+                                  <div class="pull-right">
+                                     <button class="btn btn-default" disabled=""><i class="fa fa-check fa-fw"></i> Is primary</button>
+                                     <button class="btn btn-outline btn-primary"><i class="fa fa-pencil fa-fw"></i></button>
+                                     <button class="btn btn-outline btn-danger"><i class="fa fa-trash fa-fw"></i></button>
+                                  </div>
+                               </td>
+                             </tr>
+                             <tr>
+                               <td><img src="img/mastercard.png" alt="" class="mr-sm"> Ends on 4412</td>
+                               <td>Mark Schmidt</td>
+                               <td>09/17</td>
+                               <td>
+                                  <div class="pull-right">
+                                     <button class="btn btn-outline btn-primary">Make primary</button>
+                                     <button class="btn btn-outline btn-primary"><i class="fa fa-pencil fa-fw"></i></button>
+                                     <button class="btn btn-outline btn-danger"><i class="fa fa-trash fa-fw"></i></button>
+                                  </div>
+                               </td>
+                             </tr>
+                           </tbody>
+                         </table>
+                      </div>
+                   </div>
+                 </div>
+                
+                <div class="col-md-12">
+                   <h3>Payment history</h3>
+                   <div class="panel panel-default">
+                      <div class="panel-body p0">
+                         <table class="table">
+                           <thead>
+                             <tr>
+                               <th>Date</th>
+                               <th>Method</th>
+                               <th>Amount</th>
+                               <th>Invoice</th>
+                             </tr>
+                           </thead>
+                           <tbody>
+                             <tr>
+                               <td>November 1</td>
+                               <td>Card ending on 5511</td>
+                               <td>300$</td>
+                               <td><a href="invoice.html">vw20151101</a></td>
+                             </tr>
+                             <tr>
+                               <td>December 3</td>
+                               <td>Card ending on 5511</td>
+                               <td>330$</td>
+                               <td><a href="invoice.html">vw20151203</a></td>
+                             </tr>
+                             <tr>
+                               <td>January 1</td>
+                               <td>Card ending on 5511</td>
+                               <td>390$</td>
+                               <td><a href="invoice.html">vw20160101</a></td>
+                             </tr>
+                           </tbody>
+                         </table>
+                      </div>
+                   </div>
+                 </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- END widgets box-->
+      </div>
+    </section>
+    <!-- Page footer-->
+    <footer>
+      <span>&copy; 2016 - ViewWorld</span>
+    </footer>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    
+    <div class="modal-dialog">
+      <div class="panel panel-danger">
+        <div class="panel-heading">
+          <div class="panel-title">Warning!</div>
+        </div>
+        <div class="panel-body">
+          <p>Warning! Restoring a backup will <strong>overwrite</strong> all changes you've made since 01.01.2015. Are you sure?</p>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Modern-captcha.jpg/290px-Modern-captcha.jpg" alt="">
+          <div class="col-md-6 pl0">
+            <input type="text" class="form-control" placeholder="Please input the confirmation code">
+          </div>
+        </div>
+        <div class="panel-footer text-right">
+          <button class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button class="btn btn-danger" disabled>Restore</button>
+        </div>
+      </div>
+    </div>
+
+  </div>  
+
+  <!-- =============== VENDOR SCRIPTS ===============-->
+  <!-- MODERNIZR-->
+  <script src="../vendor/modernizr/modernizr.custom.js"></script>
+  <!-- MATCHMEDIA POLYFILL-->
+  <script src="../vendor/matchMedia/matchMedia.js"></script>
+  <!-- JQUERY-->
+  <script src="../vendor/jquery/dist/jquery.js"></script>
+  <!-- BOOTSTRAP-->
+  <script src="../vendor/bootstrap/dist/js/bootstrap.js"></script>
+  <!-- STORAGE API-->
+  <script src="../vendor/jQuery-Storage-API/jquery.storageapi.js"></script>
+  <!-- JQUERY EASING-->
+  <script src="../vendor/jquery.easing/js/jquery.easing.js"></script>
+  <!-- ANIMO-->
+  <script src="../vendor/animo.js/animo.js"></script>
+  <!-- SLIMSCROLL-->
+  <script src="../vendor/slimScroll/jquery.slimscroll.min.js"></script>
+  <!-- SCREENFULL-->
+  <script src="../vendor/screenfull/dist/screenfull.js"></script>
+  <!-- LOCALIZE-->
+  <script src="../vendor/jquery-localize-i18n/dist/jquery.localize.js"></script>
+  <!-- RTL demo-->
+  <script src="js/demo/demo-rtl.js"></script>
+  <!-- =============== PAGE VENDOR SCRIPTS ===============-->
+  <!-- JQUERY STEPS-->
+  <script src="../vendor/jquery.steps/build/jquery.steps.js"></script>
+   <!-- FLOT CHART-->
+   <script src="../vendor/Flot/jquery.flot.js"></script>
+   <script src="../vendor/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+   <script src="../vendor/Flot/jquery.flot.resize.js"></script>
+   <script src="../vendor/Flot/jquery.flot.pie.js"></script>
+   <script src="../vendor/Flot/jquery.flot.time.js"></script>
+   <script src="../vendor/Flot/jquery.flot.categories.js"></script>
+   <script src="../vendor/flot-spline/js/jquery.flot.spline.min.js"></script>
+  <!-- =============== APP SCRIPTS ===============-->
+  <script src="js/app.js"></script>
+  <script src="js/magnific-popup.js"></script>
+  <script>
+    $(".popup").click(function(event){
+      event.preventDefault();
+
+      $.magnificPopup.open({
+        items: {
+            src: $(".modal-dialog"),
+            type: 'inline'
+        }
+      });
+    })
+  </script>
+  <script>
+  $(document).ready(function(){
+
+      var seriesData = {
+        'CA': 11100,   // Canada
+        'DE': 2510,    // Germany
+        'FR': 3710,    // France
+        'AU': 5710,    // Australia
+        'GB': 8310,    // Great Britain
+        'RU': 9310,    // Russia
+        'BR': 6610,    // Brazil
+        'IN': 7810,    // India
+        'CN': 4310,    // China
+        'US': 839,     // USA
+        'SA': 410      // Saudi Arabia
+      };
+      var markersData = [
+        { latLng:[41.90, 12.45],  name:'Vatican City'}
+      ];
+      new VectorMap($('#map4'), seriesData, markersData);
+  });
+
+// CHART AREA
+// ----------------------------------- 
+(function(window, document, $, undefined){
+
+  $(function(){
+
+    var data = [{
+      "label": "Uploads",
+      "color": "#aad874",
+      "data": [
+        ["Jan", 220],
+        ["Feb", 540],
+        ["Mar", 500],
+        ["Apr", 920],
+        ["May", 520],
+        ["Jun", 880],
+        ["Jul", 690],
+        ["Aug", 920],
+        ["Sep", 580],
+        ["Oct", 440],
+        ["Nov", 220],
+        ["Dec", 140]
+      ]
+    }];
+    var data2 =  [{
+      "label": "Users",
+      "color": "#7dc7df",
+      "data": [
+        ["Jan", 14],
+        ["Feb", 14],
+        ["Mar", 13],
+        ["Apr", 44],
+        ["May", 44],
+        ["Jun", 27],
+        ["Jul", 38],
+        ["Aug", 11],
+        ["Sep", 39],
+        ["Oct", 44],
+        ["Nov", 22],
+        ["Dec", 1]
+      ]
+    }];
+
+    var options = {
+                    series: {
+                        lines: {
+                            show: true,
+                            fill: 0.8
+                        },
+                        points: {
+                            show: true,
+                            radius: 4
+                        }
+                    },
+                    grid: {
+                        borderColor: '#eee',
+                        borderWidth: 1,
+                        hoverable: true,
+                        backgroundColor: '#fcfcfc'
+                    },
+                    tooltip: true,
+                    tooltipOpts: {
+                        content: function (label, x, y) { return x + ' : ' + y; }
+                    },
+                    xaxis: {
+                        tickColor: '#fcfcfc',
+                        mode: 'categories'
+                    },
+                    yaxis: {
+                        min: 0,
+                        tickColor: '#eee',
+                        position: 'left',
+                        tickFormatter: function (v) {
+                            return v;
+                        }
+                    },
+                    shadowSize: 0
+                };
+
+    var chart = $('.chart-area');
+    if(chart.length)
+
+      $.plot(chart, data, options);
+    var chart2 = $('.chart-area2');
+    if(chart2.length)
+      $.plot(chart2, data2, options);
+
+  });
+
+})(window, document, window.jQuery);
+
+// CHART BAR
+// ----------------------------------- 
+(function(window, document, $, undefined){
+
+  $(function(){
+
+    var data = [{
+      "label": "Sales",
+      "color": "#9cd159",
+      "data": [
+        ["Jan", 20],
+        ["Feb", 80],
+        ["Mar", 50],
+        ["Apr", 10],
+        ["May", 20],
+        ["Jun", 70],
+        ["Jul", 20],
+        ["Aug", 40],
+        ["Sep", 80],
+        ["Oct", 20]
+      ]
+    }];
+
+    var options = {
+                    series: {
+                        bars: {
+                            align: 'center',
+                            lineWidth: 0,
+                            show: true,
+                            barWidth: 0.6,
+                            fill: 0.9
+                        }
+                    },
+                    grid: {
+                        borderColor: '#eee',
+                        borderWidth: 1,
+                        hoverable: true,
+                        backgroundColor: '#fcfcfc'
+                    },
+                    tooltip: true,
+                    tooltipOpts: {
+                        content: function (label, x, y) { return x + ' : ' + y; }
+                    },
+                    xaxis: {
+                        tickColor: '#fcfcfc',
+                        mode: 'categories'
+                    },
+                    yaxis: {
+                        // position: 'right' or 'left'
+                        tickColor: '#eee'
+                    },
+                    shadowSize: 0
+                };
+
+    var chart = $('.chart-bar');
+    if(chart.length)
+      $.plot(chart, data, options);
+
+  });
+
+})(window, document, window.jQuery);
+
+  </script>
+</body>
+
+</html>

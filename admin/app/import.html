@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Bootstrap Admin App + jQuery">
+  <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
+  <title>Import - ViewWorld</title>
+  <!-- =============== VENDOR STYLES ===============-->
+  <!-- FONT AWESOME-->
+  <link rel="stylesheet" href="../vendor/fontawesome/css/font-awesome.min.css">
+  <!-- SIMPLE LINE ICONS-->
+  <link rel="stylesheet" href="../vendor/simple-line-icons/css/simple-line-icons.css">
+  <!-- ANIMATE.CSS-->
+  <link rel="stylesheet" href="../vendor/animate.css/animate.min.css">
+  <!-- WHIRL (spinners)-->
+  <link rel="stylesheet" href="../vendor/whirl/dist/whirl.css">
+  <!-- =============== PAGE VENDOR STYLES ===============-->
+  <!-- WEATHER ICONS-->
+  <link rel="stylesheet" href="../vendor/weather-icons/css/weather-icons.min.css">
+  <!-- =============== BOOTSTRAP STYLES ===============-->
+  <link rel="stylesheet" href="css/bootstrap.css" id="bscss">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
+
+  <!-- =============== APP STYLES ===============-->
+  <link rel="stylesheet" href="css/app.css" id="maincss">
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- top navbar-->
+    <header class="topnavbar-wrapper">
+      <!-- START Top Navbar-->
+      <nav role="navigation" class="navbar topnavbar">
+        <!-- START navbar header-->
+        <div class="navbar-header">
+          <a href="#/" class="navbar-brand">
+            <div class="brand-logo">
+              <img src="http://52.30.179.235/assets/viewworld-logo.png" alt="App Logo" class="img-responsive">
+            </div>
+            <div class="brand-logo-collapsed">
+              <img src="img/logo-single.png" alt="App Logo" class="img-responsive">
+            </div>
+          </a>
+        </div>
+        <!-- END navbar header-->
+        <!-- START Nav wrapper-->
+        <div class="nav-wrapper">
+          <!-- START Right Navbar-->
+          <ul class="nav navbar-nav navbar-right">
+            <!-- START Alert menu-->
+            <li class="dropdown dropdown-list">
+              <a href="#" data-toggle="dropdown">
+                <em class="icon-user"></em> Ivan Siniak
+              </a>
+              <!-- START Dropdown menu-->
+              <ul class="dropdown-menu animated fadeInUpShort">
+                <li>
+                  <!-- START list group-->
+                  <div class="list-group">
+                    <!-- list item-->
+                    <a href="profile.html" class="list-group-item">
+                      <div class="media-box">
+                        <div class="pull-left">
+                          <em class="fa fa-user fa-fw"></em>
+                        </div>
+                        <div class="media-box-body clearfix">
+                          <p class="center-vertical">My profile</p>
+                        </div>
+                      </div>
+                    </a>
+                    <!-- list item-->
+                    <a href="account.html" class="list-group-item">
+                      <div class="media-box">
+                        <div class="pull-left">
+                          <em class="fa fa-sliders fa-fw"></em>
+                        </div>
+                        <div class="media-box-body clearfix">
+                          <p class="center-vertical">Account settings</p>
+                        </div>
+                      </div>
+                    </a>
+                    <!-- last list item -->
+                    <a href="help.html" class="list-group-item">
+                      <div class="media-box">
+                        <div class="pull-left">
+                          <em class="fa fa-question fa-fw"></em>
+                        </div>
+                        <div class="media-box-body clearfix">
+                          <p class="center-vertical">Support Center</p>
+                        </div>
+                      </div>
+                    </a>
+                    <!-- list item-->
+                    <a href="login.html" class="list-group-item">
+                      <div class="media-box">
+                        <div class="pull-left">
+                          <em class="fa fa-power-off fa-fw"></em>
+                        </div>
+                        <div class="media-box-body clearfix">
+                          <p class="center-vertical">Logout</p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <!-- END list group-->
+                </li>
+              </ul>
+              <!-- END Dropdown menu-->
+            </li>
+            <!-- START Offsidebar button-->
+            <li class="">
+              <a href="#" data-toggle-state="offsidebar-open" data-no-persist="true">
+                <em class="icon-bubbles"></em>
+              </a>
+            </li>
+            <!-- END Offsidebar button-->
+            <!-- END Alert menu-->
+          </ul>
+          <!-- END Right Navbar-->
+        </div>
+        <!-- END Nav wrapper-->
+      </nav>
+      <!-- END Top Navbar-->
+    </header>
+    <!-- sidebar-->
+    <aside class="aside">
+      <!-- START Sidebar (left)-->
+      <div class="aside-inner">
+        <nav data-sidebar-anyclick-close="" class="sidebar">
+          <!-- START sidebar nav-->
+          <ul class="nav">
+            <!-- Iterates over all sidebar items-->
+            <li class="">
+              <a href="index.html" title="Dashboard">
+                <em class="icon-speedometer"></em>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class=" ">
+              <a href="messaging.html" title="Widgets">
+                <div class="pull-right label label-success">2</div>
+                <em class="icon-envelope"></em>
+                <span>Messaging</span>
+              </a>
+            </li>
+            <li class="nav-heading ">
+              <span>Data Collection</span>
+            </li>
+            <li class=" ">
+              <a href="inbox.html" title="Widgets">
+                <div class="pull-right label label-success">30</div>
+                <em class="fa fa-inbox"></em>
+                <span>Inbox</span>
+              </a>
+            </li>
+            <li class=" ">
+              <a href="observations.html" title="Widgets">
+                <em class="fa fa-folder"></em>
+                <span>Observations</span>
+              </a>
+            </li>
+            <li class=" ">
+              <a href="forms.html" title="Widgets">
+                <em class="fa fa-file-text"></em>
+                <span>Forms</span>
+              </a>
+            </li>
+            <li class="nav-heading ">
+              <span>Features</span>
+            </li>
+            <li class=" ">
+              <a href="map-constructor.html" title="Widgets">
+                <em class="icon-map"></em>
+                <span>Map Constructor</span>
+              </a>
+            </li>
+            <li class=" ">
+              <a href="pdf_generator.html" title="Widgets">
+                <em class="icon-doc"></em>
+                <span>PDF Generator</span>
+              </a>
+            </li>
+            <li class=" ">
+              <a href="charts.html" title="Widgets">
+                <em class="icon-pie-chart"></em>
+                <span>Charts</span>
+              </a>
+            </li>
+            <li class=" active">
+              <a href="export.html" title="Widgets">
+                <em class="icon-share-alt"></em>
+                <span>Export / Import</span>
+              </a>
+            </li>
+          </ul>
+          <!-- END sidebar nav-->
+        </nav>
+      </div>
+      <!-- END Sidebar (left)-->
+    </aside>
+    <!-- offsidebar-->
+    <aside class="offsidebar">
+      <!-- START Off Sidebar (right)-->
+      <nav>
+        <div role="tabpanel">
+          <!-- Tab panes-->
+          <div class="tab-content">
+            <div id="app-chat">
+              <h3 class="text-center text-thin">Messaging</h3>
+              <ul class="nav">
+                <!-- START list title-->
+                <li class="p">
+                  <small class="text-muted">ONLINE</small>
+                </li>
+                <!-- END list title-->
+                <li>
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0 chatuser" data-id="1">
+                    <span class="pull-right">
+                                 <span class="circle circle-success circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/05.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Juan Sims</strong>
+                                    <br>
+                                    <small class="text-muted">Designeer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0 chatuser" data-id="2">
+                    <span class="pull-right">
+                                 <span class="circle circle-success circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/06.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Maureen Jenkins</strong>
+                                    <br>
+                                    <small class="text-muted">Designeer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0 chatuser" data-id="3">
+                    <span class="pull-right">
+                                 <span class="circle circle-success circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/07.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Billie Dunn</strong>
+                                    <br>
+                                    <small class="text-muted">Designeer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0 chatuser" data-id="4">
+                    <span class="pull-right">
+                                 <span class="circle circle-success circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/08.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Tomothy Roberts</strong>
+                                    <br>
+                                    <small class="text-muted">Designer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                </li>
+                <!-- START list title-->
+                <li class="p">
+                  <small class="text-muted">OFFLINE</small>
+                </li>
+                <!-- END list title-->
+                <li>
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0 chatuser" data-id="5">
+                    <span class="pull-right">
+                                 <span class="circle circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/09.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Lawrence Robinson</strong>
+                                    <br>
+                                    <small class="text-muted">Developer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0 chatuser" data-id="6">
+                    <span class="pull-right">
+                                 <span class="circle circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/10.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Tyrone Owens</strong>
+                                    <br>
+                                    <small class="text-muted">Designer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- END Off Sidebar (right)-->
+    </aside>
+    <!-- Main section-->
+    <section>
+      <!-- Page content-->
+      <div class="content-wrapper">
+        <div class="content-heading">
+          <ol class="breadcrumb pull-right">
+            <li><a href="#">Home</a></li>
+            <li class="active">Import</li>
+          </ol>
+          Import
+        </div>
+        <!-- START widgets box-->
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+                  <div id="example-vertical">
+                    <h4>Settings</h4>
+                    <section>
+                      <div class="panel panel-default mb0">
+                        <div class="panel-heading"><div class="panel-title">Choose fields</div></div>
+                        <div class="panel-body pt0">
+                          <div class="container-fluid">
+                            <div class="row">
+                              <div class="col-md-7">
+                                <form class="form-horizontal">
+                                  <div class="form-group">
+                                    <label class="col-lg-3 control-label">Create or update</label>
+                                    <div class="col-lg-9">
+                                      <div data-toggle="buttons" class="btn-group display-block">
+                                         <label class="col-md-6 btn btn-changing active">
+                                            <input id="option2" type="radio" name="options" checked="">Update existing observations</label>
+                                         <label class="col-md-6 btn btn-changing">
+                                            <input id="option1" type="radio" name="options">Create new observations</label>
+                                    </div>
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label class="col-lg-3 control-label">File</label>
+                                    <div class="col-lg-9">
+                                      <input type="file" data-classbutton="btn btn-default" data-classinput="form-control inline" class="form-control filestyle">
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <label class="col-lg-3 control-label">Form name</label>
+                                    <div class="col-lg-9">
+                                      <select name="" id="" class="form-control">
+                                        <option value="">Form 1</option>
+                                        <option value="">Form 2</option>
+                                        <option value="">Form 3</option>
+                                        <option value="">Form 4</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                </form>                                
+                              </div>
+                              <div class="col-md-5">
+                                <h4 class="mt0">Instructions</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ligula a velit auctor varius id id quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed turpis ipsum, sollicitudin sed eros quis, dignissim viverra erat. Nunc sit amet luctus enim, id pulvinar quam <a href="#">download example file</a>.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                    <h4>Mapping</h4>
+                    <section>
+                      <div class="panel panel-default mb0">
+                        <div class="panel-heading"><div class="panel-title">Mapping form: formname1</div></div>
+                        <div class="panel-body p0">
+                          <p class="psm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ut finibus lorem, vel placerat erat. Aenean mi turpis, accumsan eu accumsan at, facilisis sit amet nibh. Nam pellentesque gravida malesuada. Sed eros mauris, imperdiet vitae massa ac, lacinia ornare ante. Duis rhoncus ex malesuada cursus blandit. Quisque iaculis laoreet dignissim. Proin at ligula blandit, placerat dui sed, maximus felis. Nullam vel sollicitudin justo. Sed aliquam placerat venenatis. Aenean vel tellus sed lacus placerat finibus. Integer imperdiet augue in venenatis ultricies. Quisque aliquet nisl ut nulla rhoncus sollicitudin sed non orci.</p>
+                          <table class="table">
+                              <thead>
+                                 <tr>
+                                    <th style="width: 15px;">#</th>
+                                    <th>File Column</th>
+                                    <th>Form Field</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr class="info">
+                                    <td>1</td>
+                                    <td>name</td>
+                                    <td>
+                                      <select name="" id="" class="form-control selectpicker">
+                                        <option value="" style="color: #999" data-content="<span style='color: #999'>Do not import</span>">Do not import</option>
+                                        <option value="" selected="">Employee Name</option>  
+                                        <option value="">Species</option>
+                                        <option value="">How many?</option>
+                                        <option value="">Some info</option>
+                                      </select>
+                                    </td>
+                                 </tr>
+                                 <tr class="info">
+                                    <td>2</td>
+                                    <td>count</td>
+                                    <td>
+                                      <select name="" id="" class="form-control selectpicker">
+                                        <option value="" style="color: #999" data-content="<span style='color: #999'>Do not import</span>">Do not import</option>
+                                        <option value="">Employee Name</option>  
+                                        <option value="">Species</option>
+                                        <option value="" selected="">How many?</option>
+                                        <option value="">Some info</option>
+                                      </select>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td>3</td>
+                                    <td>sight_by</td>
+                                    <td>
+                                      <select name="" id="" class="form-control selectpicker">
+                                        <option value="" selected="" style="color: #999" data-content="<span style='color: #999'>Do not import</span>">Do not import</option>
+                                        <option value="">Employee Name</option>  
+                                        <option value="">Species</option>
+                                        <option value="">How many?</option>
+                                        <option value="">Some info</option>
+                                      </select>
+                                    </td>
+                                 </tr>
+                                 <tr class="info">
+                                    <td>4</td>
+                                    <td>name</td>
+                                    <td>
+                                      <select name="" id="" class="form-control selectpicker">
+                                        <option value="" style="color: #999" data-content="<span style='color: #999'>Do not import</span>">Do not import</option>
+                                        <option value="" selected="">Employee Name</option>  
+                                        <option value="">Species</option>
+                                        <option value="">How many?</option>
+                                        <option value="">Some info</option>
+                                      </select>
+                                    </td>
+                                 </tr>
+                                 <tr class="info">
+                                    <td>5</td>
+                                    <td>count</td>
+                                    <td>
+                                      <select name="" id="" class="form-control selectpicker">
+                                        <option value="" style="color: #999" data-content="<span style='color: #999'>Do not import</span>">Do not import</option>
+                                        <option value="">Employee Name</option>  
+                                        <option value="">Species</option>
+                                        <option value="" selected="">How many?</option>
+                                        <option value="">Some info</option>
+                                      </select>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td>6</td>
+                                    <td>sight_by</td>
+                                    <td>
+                                      <select name="" id="" class="form-control selectpicker">
+                                        <option value="" selected="" style="color: #999" data-content="<span style='color: #999'>Do not import</span>">Do not import</option>
+                                        <option value="">Employee Name</option>  
+                                        <option value="">Species</option>
+                                        <option value="">How many?</option>
+                                        <option value="">Some info</option>
+                                      </select>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td>7</td>
+                                    <td>name</td>
+                                    <td>
+                                      <select name="" id="" class="form-control selectpicker">
+                                        <option value="" selected="" style="color: #999" data-content="<span style='color: #999'>Do not import</span>">Do not import</option>
+                                        <option value="">Employee Name</option>  
+                                        <option value="">Species</option>
+                                        <option value="">How many?</option>
+                                        <option value="">Some info</option>
+                                      </select>
+                                    </td>
+                                 </tr>
+                                 <tr class="info">
+                                    <td>8</td>
+                                    <td>count</td>
+                                    <td>
+                                      <select name="" id="" class="form-control selectpicker">
+                                        <option value="" style="color: #999" data-content="<span style='color: #999'>Do not import</span>">Do not import</option>
+                                        <option value="">Employee Name</option>  
+                                        <option value="">Species</option>
+                                        <option value="" selected="">How many?</option>
+                                        <option value="">Some info</option>
+                                      </select>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td>9</td>
+                                    <td>sight_by</td>
+                                    <td>
+                                      <select name="" id="" class="form-control selectpicker">
+                                        <option value="" selected="" style="color: #999" data-content="<span style='color: #999'>Do not import</span>">Do not import</option>
+                                        <option value="">Employee Name</option>  
+                                        <option value="">Species</option>
+                                        <option value="">How many?</option>
+                                        <option value="">Some info</option>
+                                      </select>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                      </div>
+                    </section>
+                    <h4>Review</h4>
+                    <section>
+                      <div class="panel panel-default mb0">
+                        <div class="panel-heading"><div class="panel-title">Reviewing import to: formname1</div></div>
+                        <div class="panel-body p0">
+                          <p class="psm">You are going to import data from file <em class="wizard-em">reports.xls</em> to form <em class="wizard-em">FormName 1</em> using method "<em class="wizard-em">inserting new observations</em>". This will add <em class="wizard-em">31</em> new observations. </p>
+                          <table class="table table-striper">
+                              <thead>
+                                 <tr>
+                                    <th style="width: 15px;">#</th>
+                                    <th>File Column</th>
+                                    <th style="width: 20px;"></th>
+                                    <th>Form Field</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <td>1</td>
+                                    <td>name</td>
+                                    <td><i class="icon-arrow-right"></i></td>
+                                    <td>Employee name</td>
+                                 </tr>
+                                 <tr>
+                                    <td>2</td>
+                                    <td>count</td>
+                                    <td><i class="icon-arrow-right"></i></td>
+                                    <td>How Many?</td>
+                                 </tr>
+                                 <tr>
+                                    <td>3</td>
+                                    <td>some_info</td>
+                                    <td><i class="icon-arrow-right"></i></td>
+                                    <td>Some Info</td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                      </div>
+                    </section>
+                    <h4>Finalize</h4>
+                    <section>
+                      <div class="panel panel-default mb0">
+                        <div class="panel-heading"><div class="panel-title">Finalize</div></div>
+                        <div class="panel-body pt0">
+                          <p>Importing your data, please wait.</p>
+                          <div class="progress">
+                             <div role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%" class="progress-bar progress-bar-striped">
+                                <span class="sr-only">40% Complete (success)</span>
+                             </div>
+                          </div>
+                          <p>Import completed!</p>
+                          <p><em class="wizard-em">31</em> new observations were added to <em class="wizard-em">FormName1</em>.</p>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+
+            </div>
+          </div>
+        </div>
+        <!-- END widgets box-->
+      </div>
+    </section>
+    <!-- Page footer-->
+    <footer>
+      <span>&copy; 2016 - ViewWorld</span>
+    </footer>
+  </div>
+  <!-- =============== VENDOR SCRIPTS ===============-->
+  <!-- MODERNIZR-->
+  <script src="../vendor/modernizr/modernizr.custom.js"></script>
+  <!-- MATCHMEDIA POLYFILL-->
+  <script src="../vendor/matchMedia/matchMedia.js"></script>
+  <!-- JQUERY-->
+  <script src="../vendor/jquery/dist/jquery.js"></script>
+  <!-- BOOTSTRAP-->
+  <script src="../vendor/bootstrap/dist/js/bootstrap.js"></script>
+  <!-- STORAGE API-->
+  <script src="../vendor/jQuery-Storage-API/jquery.storageapi.js"></script>
+  <!-- JQUERY EASING-->
+  <script src="../vendor/jquery.easing/js/jquery.easing.js"></script>
+  <!-- ANIMO-->
+  <script src="../vendor/animo.js/animo.js"></script>
+  <!-- SLIMSCROLL-->
+  <script src="../vendor/slimScroll/jquery.slimscroll.min.js"></script>
+  <!-- SCREENFULL-->
+  <script src="../vendor/screenfull/dist/screenfull.js"></script>
+  <!-- LOCALIZE-->
+  <script src="../vendor/jquery-localize-i18n/dist/jquery.localize.js"></script>
+  <!-- RTL demo-->
+  <script src="js/demo/demo-rtl.js"></script>
+  <!-- =============== PAGE VENDOR SCRIPTS ===============-->
+  <!-- JQUERY STEPS-->
+  <script src="../vendor/jquery.steps/build/jquery.steps.js"></script>
+   <!-- FILESTYLE-->
+   <script src="../vendor/bootstrap-filestyle/src/bootstrap-filestyle.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+
+  <!-- =============== APP SCRIPTS ===============-->
+  <script src="js/app.js"></script>
+    <script>
+  (function(window, document, $, undefined) {
+    $(function() {
+
+      $("#example-vertical").steps({
+        headerTag: "h4",
+        bodyTag: "section",
+        transitionEffect: "fade",
+        stepsOrientation: "horizontal",
+        labels: {
+          next: "Next step",
+          previous: "Previous step",
+          finish: "Finish"
+        }
+      });
+
+      $('.selectpicker').selectpicker({
+        size: 4
+      });
+
+
+    });
+  })(window, document, window.jQuery);
+  </script>
+</body>
+
+</html>

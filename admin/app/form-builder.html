@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Bootstrap Admin App + jQuery">
+  <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
+  <title>New Form - ViewWorld</title>
+  <!-- =============== VENDOR STYLES ===============-->
+  <!-- FONT AWESOME-->
+  <link rel="stylesheet" href="../vendor/fontawesome/css/font-awesome.min.css">
+  <!-- SIMPLE LINE ICONS-->
+  <link rel="stylesheet" href="../vendor/simple-line-icons/css/simple-line-icons.css">
+  <!-- ANIMATE.CSS-->
+  <link rel="stylesheet" href="../vendor/animate.css/animate.min.css">
+  <!-- WHIRL (spinners)-->
+  <link rel="stylesheet" href="../vendor/whirl/dist/whirl.css">
+  <!-- =============== PAGE VENDOR STYLES ===============-->
+  <!-- WEATHER ICONS-->
+  <link rel="stylesheet" href="../vendor/weather-icons/css/weather-icons.min.css">
+  <!-- =============== BOOTSTRAP STYLES ===============-->
+  <link rel="stylesheet" href="css/bootstrap.css" id="bscss">
+  <!-- =============== APP STYLES ===============-->
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/app.css" id="maincss">
+  <style>
+    .wizard>.actions { display: none; }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- top navbar-->
+    <header class="topnavbar-wrapper">
+      <!-- START Top Navbar-->
+      <nav role="navigation" class="navbar topnavbar">
+        <!-- START navbar header-->
+        <div class="navbar-header">
+          <a href="#/" class="navbar-brand">
+            <div class="brand-logo">
+              <img src="http://52.30.179.235/assets/viewworld-logo.png" alt="App Logo" class="img-responsive">
+            </div>
+            <div class="brand-logo-collapsed">
+              <img src="img/logo-single.png" alt="App Logo" class="img-responsive">
+            </div>
+          </a>
+        </div>
+        <!-- END navbar header-->
+        <!-- START Nav wrapper-->
+        <div class="nav-wrapper">
+          <!-- START Right Navbar-->
+          <ul class="nav navbar-nav navbar-right">
+            <!-- START Alert menu-->
+            <li class="dropdown dropdown-list">
+              <a href="#" data-toggle="dropdown">
+                <em class="icon-user"></em> Ivan Siniak
+              </a>
+              <!-- START Dropdown menu-->
+              <ul class="dropdown-menu animated fadeInUpShort">
+                <li>
+                  <!-- START list group-->
+                  <div class="list-group">
+                    <!-- list item-->
+                    <a href="profile.html" class="list-group-item">
+                      <div class="media-box">
+                        <div class="pull-left">
+                          <em class="fa fa-user fa-fw"></em>
+                        </div>
+                        <div class="media-box-body clearfix">
+                          <p class="center-vertical">My profile</p>
+                        </div>
+                      </div>
+                    </a>
+                    <!-- list item-->
+                    <a href="account.html" class="list-group-item">
+                      <div class="media-box">
+                        <div class="pull-left">
+                          <em class="fa fa-sliders fa-fw"></em>
+                        </div>
+                        <div class="media-box-body clearfix">
+                          <p class="center-vertical">Account settings</p>
+                        </div>
+                      </div>
+                    </a>
+                    <!-- last list item -->
+                    <a href="help.html" class="list-group-item">
+                      <div class="media-box">
+                        <div class="pull-left">
+                          <em class="fa fa-question fa-fw"></em>
+                        </div>
+                        <div class="media-box-body clearfix">
+                          <p class="center-vertical">Support Center</p>
+                        </div>
+                      </div>
+                    </a>
+                    <!-- list item-->
+                    <a href="login.html" class="list-group-item">
+                      <div class="media-box">
+                        <div class="pull-left">
+                          <em class="fa fa-power-off fa-fw"></em>
+                        </div>
+                        <div class="media-box-body clearfix">
+                          <p class="center-vertical">Logout</p>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                  <!-- END list group-->
+                </li>
+              </ul>
+              <!-- END Dropdown menu-->
+            </li>
+            <!-- START Offsidebar button-->
+            <li class="">
+              <a href="#" data-toggle-state="offsidebar-open" data-no-persist="true">
+                <em class="icon-bubbles"></em>
+              </a>
+            </li>
+            <!-- END Offsidebar button-->
+            <!-- END Alert menu-->
+          </ul>
+          <!-- END Right Navbar-->
+        </div>
+        <!-- END Nav wrapper-->
+      </nav>
+      <!-- END Top Navbar-->
+    </header>
+    <!-- sidebar-->
+    <aside class="aside">
+      <!-- START Sidebar (left)-->
+      <div class="aside-inner">
+        <nav data-sidebar-anyclick-close="" class="sidebar">
+          <!-- START sidebar nav-->
+          <ul class="nav">
+            <!-- Iterates over all sidebar items-->
+            <li class="">
+              <a href="index.html" title="Dashboard">
+                <em class="icon-speedometer"></em>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li class=" ">
+              <a href="messaging.html" title="Widgets">
+                <div class="pull-right label label-success">2</div>
+                <em class="icon-envelope"></em>
+                <span>Messaging</span>
+              </a>
+            </li>
+            <li class="nav-heading ">
+              <span>Data Collection</span>
+            </li>
+            <li class=" ">
+              <a href="inbox.html" title="Widgets">
+                <div class="pull-right label label-success">30</div>
+                <em class="fa fa-inbox"></em>
+                <span>Inbox</span>
+              </a>
+            </li>
+            <li class=" ">
+              <a href="observations.html" title="Widgets">
+                <em class="fa fa-folder"></em>
+                <span>Observations</span>
+              </a>
+            </li>
+            <li class=" active">
+              <a href="forms.html" title="Widgets">
+                <em class="fa fa-file-text"></em>
+                <span>Forms</span>
+              </a>
+            </li>
+            <li class="nav-heading ">
+              <span>Features</span>
+            </li>
+            <li class=" ">
+              <a href="map-constructor.html" title="Widgets">
+                <em class="icon-map"></em>
+                <span>Map Constructor</span>
+              </a>
+            </li>
+            <li class=" ">
+              <a href="pdf_generator.html" title="Widgets">
+                <em class="icon-doc"></em>
+                <span>PDF Generator</span>
+              </a>
+            </li>
+            <li class=" ">
+              <a href="charts.html" title="Widgets">
+                <em class="icon-pie-chart"></em>
+                <span>Charts</span>
+              </a>
+            </li>
+            <li class=" ">
+              <a href="export.html" title="Widgets">
+                <em class="icon-share-alt"></em>
+                <span>Export / Import</span>
+              </a>
+            </li>
+          </ul>
+          <!-- END sidebar nav-->
+        </nav>
+      </div>
+      <!-- END Sidebar (left)-->
+    </aside>
+    <!-- offsidebar-->
+    <aside class="offsidebar">
+      <!-- START Off Sidebar (right)-->
+      <nav>
+        <div role="tabpanel">
+          <!-- Tab panes-->
+          <div class="tab-content">
+            <div id="app-chat">
+              <h3 class="text-center text-thin">Messaging</h3>
+              <ul class="nav">
+                <!-- START list title-->
+                <li class="p">
+                  <small class="text-muted">ONLINE</small>
+                </li>
+                <!-- END list title-->
+                <li>
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0 chatuser" data-id="1">
+                    <span class="pull-right">
+                                 <span class="circle circle-success circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/05.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Juan Sims</strong>
+                                    <br>
+                                    <small class="text-muted">Designeer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0 chatuser" data-id="2">
+                    <span class="pull-right">
+                                 <span class="circle circle-success circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/06.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Maureen Jenkins</strong>
+                                    <br>
+                                    <small class="text-muted">Designeer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0 chatuser" data-id="3">
+                    <span class="pull-right">
+                                 <span class="circle circle-success circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/07.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Billie Dunn</strong>
+                                    <br>
+                                    <small class="text-muted">Designeer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0 chatuser" data-id="4">
+                    <span class="pull-right">
+                                 <span class="circle circle-success circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/08.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Tomothy Roberts</strong>
+                                    <br>
+                                    <small class="text-muted">Designer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                </li>
+                <!-- START list title-->
+                <li class="p">
+                  <small class="text-muted">OFFLINE</small>
+                </li>
+                <!-- END list title-->
+                <li>
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0 chatuser" data-id="5">
+                    <span class="pull-right">
+                                 <span class="circle circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/09.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Lawrence Robinson</strong>
+                                    <br>
+                                    <small class="text-muted">Developer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                  <!-- START User status-->
+                  <a href="#" class="media-box p mt0 chatuser" data-id="6">
+                    <span class="pull-right">
+                                 <span class="circle circle-lg"></span>
+                    </span>
+                    <span class="pull-left">
+                                 <!-- Contact avatar-->
+                                 <img src="img/user/10.jpg" alt="Image" class="media-box-object img-circle thumb48">
+                              </span>
+                    <!-- Contact info-->
+                    <span class="media-box-body">
+                                 <span class="media-box-heading">
+                                    <strong>Tyrone Owens</strong>
+                                    <br>
+                                    <small class="text-muted">Designer</small>
+                                 </span>
+                    </span>
+                  </a>
+                  <!-- END User status-->
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- END Off Sidebar (right)-->
+    </aside>
+    <!-- Main section-->
+    <section>
+      <!-- Page content-->
+      <div class="content-wrapper">
+        <div class="content-heading">
+          <ol class="breadcrumb pull-right">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Forms</a></li>
+            <li class="active">New</li>
+          </ol>
+          New form
+        </div>
+        <!-- START widgets box-->
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div id="example-vertical">
+                    <h4>Fields</h4>
+                    <section>
+                      <div class="container-fluid">
+                        <div class="row">
+                          <div class="col-md-9">
+                            <div class="panel panel-default mb0">
+                              <div class="panel-heading"><div class="panel-title">Choose fields</div></div>
+                              <div class="panel-body pt0">
+
+                                <div class="panel widget fb-field" id="hl3">
+                                  <div class="bg-gray text-center fb-field_icon">
+                                    <i class="fa fa-list fa-fw"></i>
+                                  </div>
+                                  <div class="border-gray fb-field_caption">
+                                    What species did u see 
+                                    <div class="btn-group pull-right">
+                                      <button class="btn btn-sm btn-default"><i class="fa fa-pencil"></i></button>
+                                      <button class="btn btn-sm btn-default"><i class="fa fa-copy"></i></button>
+                                      <button class="btn btn-sm btn-default"><i class="fa fa-trash"></i></button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="panel widget fb-field">
+                                  <div class="bg-gray text-center fb-field_icon">
+                                    <i class="fa fa-font fa-fw"></i>
+                                  </div>
+                                  <div class="border-gray fb-field_caption">
+                                    How many of them?
+                                    <div class="btn-group pull-right">
+                                      <button class="btn btn-sm btn-default"><i class="fa fa-pencil"></i></button>
+                                      <button class="btn btn-sm btn-default"><i class="fa fa-copy"></i></button>
+                                      <button class="btn btn-sm btn-default"><i class="fa fa-trash"></i></button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="panel widget fb-field" id="hl1">
+                                  <div class="bg-gray text-center fb-field_icon">
+                                    <i class="fa fa-question fa-fw"></i>
+                                  </div>
+                                  <div class="border-gray fb-field_caption">
+                                    Did you observe alone? 
+                                    <div class="btn-group pull-right">
+                                      <button class="btn btn-sm btn-default"><i class="fa fa-pencil"></i></button>
+                                      <button class="btn btn-sm btn-default"><i class="fa fa-copy"></i></button>
+                                      <button class="btn btn-sm btn-default"><i class="fa fa-trash"></i></button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="panel widget fb-field" id="hl2">
+                                  <div class="bg-gray text-center fb-field_icon">
+                                    <i class="fa fa-list fa-fw"></i>
+                                  </div>
+                                  <div class="border-gray fb-field_caption">
+                                    What species did u see 
+                                    <div class="btn-group pull-right">
+                                      <button class="btn btn-sm btn-default"><i class="fa fa-pencil"></i></button>
+                                      <button class="btn btn-sm btn-default"><i class="fa fa-copy"></i></button>
+                                      <button class="btn btn-sm btn-default"><i class="fa fa-trash"></i></button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="panel widget fb-field">
+                                  <div class="bg-gray text-center fb-field_icon">
+                                    <i class="fa fa-map-marker fa-fw"></i>
+                                  </div>
+                                  <div class="border-gray fb-field_caption">
+                                    Location
+                                    <div class="btn-group pull-right">
+                                      <button class="btn btn-sm btn-default"><i class="fa fa-pencil"></i></button>
+                                      <button class="btn btn-sm btn-default"><i class="fa fa-copy"></i></button>
+                                      <button class="btn btn-sm btn-default"><i class="fa fa-trash"></i></button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="panel widget fb-field">
+                                  <div class="bg-gray text-center fb-field_icon">
+                                    <i class="fa fa-image fa-fw"></i>
+                                  </div>
+                                  <div class="border-gray fb-field_caption">
+                                    Photo
+                                    <div class="btn-group pull-right">
+                                      <button class="btn btn-sm btn-default"><i class="fa fa-pencil"></i></button>
+                                      <button class="btn btn-sm btn-default"><i class="fa fa-copy"></i></button>
+                                      <button class="btn btn-sm btn-default"><i class="fa fa-trash"></i></button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="panel widget widget-branching fb-field" id="highlight">
+                                  <div class="bg-info-dark text-center fb-field_icon">
+                                    <i class="fa fa-share-alt fa-fw"></i>
+                                  </div>
+                                  <div class="border-info-dark fb-field_caption">
+                                    Branch
+                                    <div class="btn-group pull-right">
+                                      <button class="btn btn-sm btn-default"><i class="fa fa-eye"></i></button>
+                                      <button class="btn btn-sm btn-default"><i class="fa fa-pencil"></i></button>
+                                      <button class="btn btn-sm btn-default"><i class="fa fa-copy"></i></button>
+                                      <button class="btn btn-sm btn-default"><i class="fa fa-trash"></i></button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="fb-branch-container">
+                                  <div class="panel widget fb-field">
+                                    <div class="bg-gray text-center fb-field_icon">
+                                      <i class="fa fa-list fa-fw"></i>
+                                    </div>
+                                    <div class="border-gray fb-field_caption">
+                                      What species did u see 
+                                      <div class="btn-group pull-right">
+                                        <button class="btn btn-sm btn-default"><i class="fa fa-pencil"></i></button>
+                                        <button class="btn btn-sm btn-default"><i class="fa fa-copy"></i></button>
+                                        <button class="btn btn-sm btn-default"><i class="fa fa-trash"></i></button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="panel widget fb-field">
+                                    <div class="bg-gray text-center fb-field_icon">
+                                      <i class="fa fa-font fa-fw"></i>
+                                    </div>
+                                    <div class="border-gray fb-field_caption">
+                                      How many of them?
+                                      <div class="btn-group pull-right">
+                                        <button class="btn btn-sm btn-default"><i class="fa fa-pencil"></i></button>
+                                        <button class="btn btn-sm btn-default"><i class="fa fa-copy"></i></button>
+                                        <button class="btn btn-sm btn-default"><i class="fa fa-trash"></i></button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="panel widget fb-field">
+                                    <div class="bg-gray text-center fb-field_icon">
+                                      <i class="fa fa-question fa-fw"></i>
+                                    </div>
+                                    <div class="border-gray fb-field_caption">
+                                      Did you observe alone? 
+                                      <div class="btn-group pull-right">
+                                        <button class="btn btn-sm btn-default"><i class="fa fa-pencil"></i></button>
+                                        <button class="btn btn-sm btn-default"><i class="fa fa-copy"></i></button>
+                                        <button class="btn btn-sm btn-default"><i class="fa fa-trash"></i></button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="panel widget widget-branching fb-field">
+                                    <div class="bg-info-dark text-center fb-field_icon">
+                                      <i class="fa fa-share-alt fa-fw"></i>
+                                    </div>
+                                    <div class="border-info-dark fb-field_caption">
+                                      Branch
+                                      <div class="btn-group pull-right">
+                                      <button class="btn btn-sm btn-default"><i class="fa fa-eye"></i></button>
+                                        <button class="btn btn-sm btn-default"><i class="fa fa-pencil"></i></button>
+                                        <button class="btn btn-sm btn-default"><i class="fa fa-copy"></i></button>
+                                        <button class="btn btn-sm btn-default"><i class="fa fa-trash"></i></button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="fb-branch-container">
+                                    <div class="panel widget fb-field">
+                                      <div class="bg-gray text-center fb-field_icon">
+                                        <i class="fa fa-list fa-fw"></i>
+                                      </div>
+                                      <div class="border-gray fb-field_caption">
+                                        What species did u see 
+                                        <div class="btn-group pull-right">
+                                          <button class="btn btn-sm btn-default"><i class="fa fa-pencil"></i></button>
+                                          <button class="btn btn-sm btn-default"><i class="fa fa-copy"></i></button>
+                                          <button class="btn btn-sm btn-default"><i class="fa fa-trash"></i></button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="panel widget fb-field">
+                                      <div class="bg-gray text-center fb-field_icon">
+                                        <i class="fa fa-font fa-fw"></i>
+                                      </div>
+                                      <div class="border-gray fb-field_caption">
+                                        How many of them?
+                                        <div class="btn-group pull-right">
+                                          <button class="btn btn-sm btn-default"><i class="fa fa-pencil"></i></button>
+                                          <button class="btn btn-sm btn-default"><i class="fa fa-copy"></i></button>
+                                          <button class="btn btn-sm btn-default"><i class="fa fa-trash"></i></button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="panel widget fb-field">
+                                      <div class="bg-gray text-center fb-field_icon">
+                                        <i class="fa fa-question fa-fw"></i>
+                                      </div>
+                                      <div class="border-gray fb-field_caption">
+                                        Did you observe alone? 
+                                        <div class="btn-group pull-right">
+                                          <button class="btn btn-sm btn-default"><i class="fa fa-pencil"></i></button>
+                                          <button class="btn btn-sm btn-default"><i class="fa fa-copy"></i></button>
+                                          <button class="btn btn-sm btn-default"><i class="fa fa-trash"></i></button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="panel widget widget-branching fb-field">
+                                    <div class="bg-info-dark text-center fb-field_icon">
+                                      <i class="fa fa-share-alt fa-fw"></i>
+                                    </div>
+                                    <div class="border-info-dark fb-field_caption">
+                                      Branch
+                                      <div class="btn-group pull-right">
+                                      <button class="btn btn-sm btn-default"><i class="fa fa-eye"></i></button>
+                                        <button class="btn btn-sm btn-default"><i class="fa fa-pencil"></i></button>
+                                        <button class="btn btn-sm btn-default"><i class="fa fa-copy"></i></button>
+                                        <button class="btn btn-sm btn-default"><i class="fa fa-trash"></i></button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="fb-branch-container">
+                                    <div class="panel widget fb-field">
+                                      <div class="bg-gray text-center fb-field_icon">
+                                        <i class="fa fa-list fa-fw"></i>
+                                      </div>
+                                      <div class="border-gray fb-field_caption">
+                                        What species did u see 
+                                        <div class="btn-group pull-right">
+                                          <button class="btn btn-sm btn-default"><i class="fa fa-pencil"></i></button>
+                                          <button class="btn btn-sm btn-default"><i class="fa fa-copy"></i></button>
+                                          <button class="btn btn-sm btn-default"><i class="fa fa-trash"></i></button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="panel widget fb-field">
+                                      <div class="bg-gray text-center fb-field_icon">
+                                        <i class="fa fa-font fa-fw"></i>
+                                      </div>
+                                      <div class="border-gray fb-field_caption">
+                                        How many of them?
+                                        <div class="btn-group pull-right">
+                                          <button class="btn btn-sm btn-default"><i class="fa fa-pencil"></i></button>
+                                          <button class="btn btn-sm btn-default"><i class="fa fa-copy"></i></button>
+                                          <button class="btn btn-sm btn-default"><i class="fa fa-trash"></i></button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="panel widget fb-field">
+                                      <div class="bg-gray text-center fb-field_icon">
+                                        <i class="fa fa-question fa-fw"></i>
+                                      </div>
+                                      <div class="border-gray fb-field_caption">
+                                        Did you observe alone? 
+                                        <div class="btn-group pull-right">
+                                          <button class="btn btn-sm btn-default"><i class="fa fa-pencil"></i></button>
+                                          <button class="btn btn-sm btn-default"><i class="fa fa-copy"></i></button>
+                                          <button class="btn btn-sm btn-default"><i class="fa fa-trash"></i></button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="panel widget widget-branching fb-field">
+                                    <div class="bg-info-dark text-center fb-field_icon">
+                                      <i class="fa fa-share-alt fa-fw"></i>
+                                    </div>
+                                    <div class="border-info-dark fb-field_caption">
+                                      Branch
+                                      <div class="btn-group pull-right">
+                                      <button class="btn btn-sm btn-default"><i class="fa fa-eye"></i></button>
+                                        <button class="btn btn-sm btn-default"><i class="fa fa-pencil"></i></button>
+                                        <button class="btn btn-sm btn-default"><i class="fa fa-copy"></i></button>
+                                        <button class="btn btn-sm btn-default"><i class="fa fa-trash"></i></button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="fb-branch-container">
+                                    <div class="panel widget fb-field">
+                                      <div class="bg-gray text-center fb-field_icon">
+                                        <i class="fa fa-list fa-fw"></i>
+                                      </div>
+                                      <div class="border-gray fb-field_caption">
+                                        What species did u see 
+                                        <div class="btn-group pull-right">
+                                          <button class="btn btn-sm btn-default"><i class="fa fa-pencil"></i></button>
+                                          <button class="btn btn-sm btn-default"><i class="fa fa-copy"></i></button>
+                                          <button class="btn btn-sm btn-default"><i class="fa fa-trash"></i></button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="panel widget fb-field">
+                                      <div class="bg-gray text-center fb-field_icon">
+                                        <i class="fa fa-font fa-fw"></i>
+                                      </div>
+                                      <div class="border-gray fb-field_caption">
+                                        How many of them?
+                                        <div class="btn-group pull-right">
+                                          <button class="btn btn-sm btn-default"><i class="fa fa-pencil"></i></button>
+                                          <button class="btn btn-sm btn-default"><i class="fa fa-copy"></i></button>
+                                          <button class="btn btn-sm btn-default"><i class="fa fa-trash"></i></button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="panel widget fb-field">
+                                      <div class="bg-gray text-center fb-field_icon">
+                                        <i class="fa fa-question fa-fw"></i>
+                                      </div>
+                                      <div class="border-gray fb-field_caption">
+                                        Did you observe alone? 
+                                        <div class="btn-group pull-right">
+                                          <button class="btn btn-sm btn-default"><i class="fa fa-pencil"></i></button>
+                                          <button class="btn btn-sm btn-default"><i class="fa fa-copy"></i></button>
+                                          <button class="btn btn-sm btn-default"><i class="fa fa-trash"></i></button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  </div>
+                                </div>
+
+                                <div class="panel widget fb-field fb-field-system">
+                                  <div class="bg-gray-lighter text-center fb-field_icon">
+                                    <i class="fa fa-edit fa-fw"></i>
+                                  </div>
+                                  <div class="border-gray-lighter fb-field_caption">
+                                    Creation Date and Time <span class="pull-right text-system">System <i class="icon-lock"></i></span>
+                                  </div>
+                                </div>
+                                <div class="panel widget fb-field fb-field-system">
+                                  <div class="bg-gray-lighter text-center fb-field_icon">
+                                    <i class="fa fa-user fa-fw"></i>
+                                  </div>
+                                  <div class="border-gray-lighter fb-field_caption">
+                                    Username <span class="pull-right text-system">System <i class="icon-lock"></i></span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="text-right mt-15">
+                              <button class="btn btn-primary">Next Step</button>
+                            </div>
+                          </div>
+
+                          <div class="col-md-3 form-builder-sidebar">
+                            <div class="panel widget">
+                              <div class="row row-table">
+                                <div class="col-xs-3 bg-gray text-center">
+                                  <em class="fa fa-font fa-fw"></em>
+                                </div>
+                                <div class="col-xs-9 pv-sm form-builder-sidebar__body border-gray">
+                                  Text
+                                </div>
+                              </div>
+                            </div>
+                            <div class="panel widget">
+                              <div class="row row-table">
+                                <div class="col-xs-3 bg-gray text-center">
+                                  <em class="fa fa-cog fa-fw"></em>
+                                </div>
+                                <div class="col-xs-9 pv-sm form-builder-sidebar__body border-gray">
+                                  Numeric
+                                </div>
+                              </div>
+                            </div>
+                            <div class="panel widget">
+                              <div class="row row-table">
+                                <div class="col-xs-3 bg-gray text-center">
+                                  <em class="fa fa-map-marker fa-fw"></em>
+                                </div>
+                                <div class="col-xs-9 pv-sm form-builder-sidebar__body border-gray">
+                                  GPS
+                                </div>
+                              </div>
+                            </div>
+                            <div class="panel widget">
+                              <div class="row row-table">
+                                <div class="col-xs-3 bg-gray text-center">
+                                  <em class="fa fa-list fa-fw"></em>
+                                </div>
+                                <div class="col-xs-9 pv-sm form-builder-sidebar__body border-gray">
+                                  Select
+                                </div>
+                              </div>
+                            </div>
+                            <div class="panel widget">
+                              <div class="row row-table">
+                                <div class="col-xs-3 bg-gray text-center">
+                                  <em class="fa fa-question fa-fw"></em>
+                                </div>
+                                <div class="col-xs-9 pv-sm form-builder-sidebar__body border-gray">
+                                  Yes or No
+                                </div>
+                              </div>
+                            </div>
+                            <div class="panel widget">
+                              <div class="row row-table">
+                                <div class="col-xs-3 bg-gray text-center">
+                                  <em class="fa fa-calendar fa-fw"></em>
+                                </div>
+                                <div class="col-xs-9 pv-sm form-builder-sidebar__body border-gray">
+                                  Date &amp; Time
+                                </div>
+                              </div>
+                            </div>
+                            <div class="panel widget">
+                              <div class="row row-table">
+                                <div class="col-xs-3 bg-gray text-center">
+                                  <em class="fa fa-photo fa-fw"></em>
+                                </div>
+                                <div class="col-xs-9 pv-sm form-builder-sidebar__body border-gray">
+                                  Media File
+                                </div>
+                              </div>
+                            </div>
+                            <div class="panel widget">
+                              <div class="row row-table">
+                                <div class="col-xs-3 bg-gray text-center">
+                                  <em class="fa fa-file-o fa-fw"></em>
+                                </div>
+                                <div class="col-xs-9 pv-sm form-builder-sidebar__body border-gray">
+                                  Custom File
+                                </div>
+                              </div>
+                            </div>
+                            <div class="panel widget">
+                              <div class="row row-table">
+                                <div class="col-xs-3 bg-gray text-center">
+                                  <em class="fa fa-pencil fa-fw"></em>
+                                </div>
+                                <div class="col-xs-9 pv-sm form-builder-sidebar__body border-gray">
+                                  Signature
+                                </div>
+                              </div>
+                            </div>
+                            <div class="panel widget widget-branching">
+                              <div class="row row-table">
+                                <div class="col-xs-3 bg-info-dark text-center">
+                                  <em class="fa fa-share-alt fa-fw"></em>
+                                </div>
+                                <div class="col-xs-9 pv-sm form-builder-sidebar__body border-info-dark">
+                                  Branching field
+                                </div>
+                              </div>
+                            </div>
+                            <div class="panel widget">
+                              <div class="row row-table">
+                                <div class="col-xs-3 bg-info-light text-center">
+                                  <em class="fa fa-paragraph fa-fw"></em>
+                                </div>
+                                <div class="col-xs-9 pv-sm form-builder-sidebar__body border-info-light">
+                                  Page break
+                                </div>
+                              </div>
+                            </div>
+                            <div class="panel widget">
+                              <div class="row row-table">
+                                <div class="col-xs-3 bg-info-light text-center">
+                                  <em class="fa fa-info fa-fw"></em>
+                                </div>
+                                <div class="col-xs-9 pv-sm form-builder-sidebar__body border-info-light">
+                                  Explanation
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                    <h4>ID Label</h4>
+                    <section>
+                      <div class="panel panel-default mb0">
+                        <div class="panel-heading"><div class="panel-title">Choose ID label</div></div>
+                        <div class="panel-body pt0">
+                          <p>Wonderful transition effects.</p>
+                        </div>
+                      </div>
+                    </section>
+                    <h4>Settings</h4>
+                    <section>
+                      <div class="panel panel-default mb0">
+                        <div class="panel-heading"><div class="panel-title">Form settings</div></div>
+                        <div class="panel-body pt0">
+                          <p>Try the keyboard navigation by clicking arrow left or right!</p>
+                        </div>
+                      </div>
+                    </section>
+                    <h4>Finalize</h4>
+                    <section>
+                      <div class="panel panel-default mb0">
+                        <div class="panel-heading"><div class="panel-title">Finalize</div></div>
+                        <div class="panel-body pt0">
+                          <p>The next and previous buttons help you to navigate through your content.</p>
+                        </div>
+                      </div>
+                    </section>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END widgets box-->
+      </div>
+    </section>
+    <!-- Page footer-->
+    <footer>
+      <span>&copy; 2016 - ViewWorld</span>
+    </footer>
+  </div>
+  <div class="popup hidden">
+    <div class="container container-narrow">
+      <div class="panel panel-default">
+        <div class="panel-heading">Text Field</div>
+        <div class="panel-body">
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label class="col-lg-2 control-label">Title</label>
+              <div class="col-lg-10">
+                 <input type="text" placeholder="Title" class="form-control">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-2 control-label">Hint</label>
+              <div class="col-lg-10">
+                 <input type="text" placeholder="Hint" class="form-control">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-2 control-label">Default</label>
+              <div class="col-lg-10">
+                 <input type="text" placeholder="Default Value" class="form-control">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-2 control-label">Length</label>
+              <div class="col-lg-5">
+                 <input type="text" placeholder="Min" class="form-control">
+              </div>
+              <div class="col-lg-5">
+                 <input type="text" placeholder="Max" class="form-control">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-offset-2 col-lg-10">
+                 <div class="checkbox c-checkbox">
+                    <label>
+                       <input type="checkbox" checked="">
+                       <span class="fa fa-check"></span>Required</label>
+                 </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-offset-2 col-lg-10">
+                 <div class="checkbox c-checkbox">
+                    <label>
+                       <input type="checkbox" checked="">
+                       <span class="fa fa-check"></span>Editable</label>
+                 </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-offset-2 col-lg-10">
+                 <div class="checkbox c-checkbox">
+                    <label>
+                       <input type="checkbox">
+                       <span class="fa fa-check"></span>Hidden</label>
+                 </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="panel-footer clearfix">
+          <div class="pull-right">
+            <button type="submit" class="btn btn-default">Cancel</button>
+            <button type="submit" class="btn btn-primary">Add Field</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="popup2 hidden">
+    <div class="container">
+      <div class="panel panel-default">
+        <div class="panel-heading">Text Field</div>
+        <div class="panel-body">
+          <div class="container-fluid">
+            <div class="qb-row row">
+              <div class="qb-label"><label for="" class="control-label">And</label></div>
+              <div class="qb-criteria">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <select name="" id="" class="form-control">
+                        <option value="">Field 1</option>
+                        <option value="">Field 2</option>
+                        <option value="">Field 3</option>
+                        <option value="">Field 4</option>
+                        <option value="">Field 5</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4">
+                      <select name="" id="" class="form-control">
+                        <option value="">Equal to</option>
+                        <option value="">Not equal to</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4">
+                      <select name="" id="" class="form-control">
+                        <option value="">Value 1</option>
+                        <option value="">Value 2</option>
+                        <option value="">Value 3</option>
+                        <option value="">Value 4</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="qb-buttons text-right">
+                <button type="button" class="btn btn-default"><i class="fa fa-trash"></i></button>
+                <div class="btn-group">
+                   <button type="button" class="btn btn-primary">And</button>
+                   <button type="button" class="btn btn-primary">Or</button>
+                </div>
+              </div>
+            </div>
+            <div class="qb-row-in">
+              <div class="qb-row row">
+                <div class="qb-label"><label for="" class="control-label">Or</label></div>
+                <div class="qb-criteria">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <select name="" id="" class="form-control">
+                          <option value="">Field 1</option>
+                          <option value="">Field 2</option>
+                          <option value="">Field 3</option>
+                          <option value="">Field 4</option>
+                          <option value="">Field 5</option>
+                        </select>
+                      </div>
+                      <div class="col-md-4">
+                        <select name="" id="" class="form-control">
+                          <option value="">Equal to</option>
+                          <option value="">Not equal to</option>
+                        </select>
+                      </div>
+                      <div class="col-md-4">
+                        <select name="" id="" class="form-control">
+                          <option value="">Value 1</option>
+                          <option value="">Value 2</option>
+                          <option value="">Value 3</option>
+                          <option value="">Value 4</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="qb-buttons text-right">
+                  <button type="button" class="btn btn-default"><i class="fa fa-trash"></i></button>
+                  <div class="btn-group">
+                     <button type="button" class="btn btn-primary">And</button>
+                     <button type="button" class="btn btn-primary">Or</button>
+                  </div>
+                </div>
+              </div>
+              <div class="qb-row row">
+                <div class="qb-label"><label for="" class="control-label">Or</label></div>
+                <div class="qb-criteria">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <select name="" id="" class="form-control">
+                          <option value="">Field 1</option>
+                          <option value="">Field 2</option>
+                          <option value="">Field 3</option>
+                          <option value="">Field 4</option>
+                          <option value="">Field 5</option>
+                        </select>
+                      </div>
+                      <div class="col-md-4">
+                        <select name="" id="" class="form-control">
+                          <option value="">Equal to</option>
+                          <option value="">Not equal to</option>
+                        </select>
+                      </div>
+                      <div class="col-md-4">
+                        <select name="" id="" class="form-control">
+                          <option value="">Value 1</option>
+                          <option value="">Value 2</option>
+                          <option value="">Value 3</option>
+                          <option value="">Value 4</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="qb-buttons text-right">
+                  <button type="button" class="btn btn-default"><i class="fa fa-trash"></i></button>
+                  <div class="btn-group">
+                     <button type="button" class="btn btn-primary">And</button>
+                     <button type="button" class="btn btn-primary">Or</button>
+                  </div>
+                </div>
+              </div>
+              <div class="qb-row row">
+                <div class="qb-label"><label for="" class="control-label">Or</label></div>
+                <div class="qb-criteria">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-md-4">
+                        <select name="" id="" class="form-control">
+                          <option value="">Field 1</option>
+                          <option value="">Field 2</option>
+                          <option value="">Field 3</option>
+                          <option value="">Field 4</option>
+                          <option value="">Field 5</option>
+                        </select>
+                      </div>
+                      <div class="col-md-4">
+                        <select name="" id="" class="form-control">
+                          <option value="">Equal to</option>
+                          <option value="">Not equal to</option>
+                        </select>
+                      </div>
+                      <div class="col-md-4">
+                        <select name="" id="" class="form-control">
+                          <option value="">Value 1</option>
+                          <option value="">Value 2</option>
+                          <option value="">Value 3</option>
+                          <option value="">Value 4</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="qb-buttons text-right">
+                  <button type="button" class="btn btn-default"><i class="fa fa-trash"></i></button>
+                  <div class="btn-group">
+                     <button type="button" class="btn btn-primary">And</button>
+                     <button type="button" class="btn btn-primary">Or</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="qb-row row">
+              <div class="qb-label"><label for="" class="control-label">And</label></div>
+              <div class="qb-criteria">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <select name="" id="" class="form-control">
+                        <option value="">Field 1</option>
+                        <option value="">Field 2</option>
+                        <option value="">Field 3</option>
+                        <option value="">Field 4</option>
+                        <option value="">Field 5</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4">
+                      <select name="" id="" class="form-control">
+                        <option value="">Equal to</option>
+                        <option value="">Not equal to</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4">
+                      <select name="" id="" class="form-control">
+                        <option value="">Value 1</option>
+                        <option value="">Value 2</option>
+                        <option value="">Value 3</option>
+                        <option value="">Value 4</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="qb-buttons text-right">
+                <button type="button" class="btn btn-default"><i class="fa fa-trash"></i></button>
+                <div class="btn-group">
+                   <button type="button" class="btn btn-primary">And</button>
+                   <button type="button" class="btn btn-primary">Or</button>
+                </div>
+              </div>
+            </div>
+            <div class="qb-row row">
+              <div class="qb-label"><label for="" class="control-label">And</label></div>
+              <div class="qb-criteria">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <select name="" id="" class="form-control">
+                        <option value="">Field 1</option>
+                        <option value="">Field 2</option>
+                        <option value="">Field 3</option>
+                        <option value="">Field 4</option>
+                        <option value="">Field 5</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4">
+                      <select name="" id="" class="form-control">
+                        <option value="">Equal to</option>
+                        <option value="">Not equal to</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4">
+                      <select name="" id="" class="form-control">
+                        <option value="">Value 1</option>
+                        <option value="">Value 2</option>
+                        <option value="">Value 3</option>
+                        <option value="">Value 4</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="qb-buttons text-right">
+                <button type="button" class="btn btn-default"><i class="fa fa-trash"></i></button>
+                <div class="btn-group">
+                   <button type="button" class="btn btn-primary">And</button>
+                   <button type="button" class="btn btn-primary">Or</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer clearfix">
+          <div class="pull-right">
+            <button type="submit" class="btn btn-default">Cancel</button>
+            <button type="submit" class="btn btn-primary">Add Field</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- =============== VENDOR SCRIPTS ===============-->
+  <!-- MODERNIZR-->
+  <script src="../vendor/modernizr/modernizr.custom.js"></script>
+  <!-- MATCHMEDIA POLYFILL-->
+  <script src="../vendor/matchMedia/matchMedia.js"></script>
+  <!-- JQUERY-->
+  <script src="../vendor/jquery/dist/jquery.js"></script>
+  <!-- BOOTSTRAP-->
+  <script src="../vendor/bootstrap/dist/js/bootstrap.js"></script>
+  <!-- STORAGE API-->
+  <script src="../vendor/jQuery-Storage-API/jquery.storageapi.js"></script>
+  <!-- JQUERY EASING-->
+  <script src="../vendor/jquery.easing/js/jquery.easing.js"></script>
+  <!-- ANIMO-->
+  <script src="../vendor/animo.js/animo.js"></script>
+  <!-- SLIMSCROLL-->
+  <script src="../vendor/slimScroll/jquery.slimscroll.min.js"></script>
+  <!-- SCREENFULL-->
+  <script src="../vendor/screenfull/dist/screenfull.js"></script>
+  <!-- LOCALIZE-->
+  <script src="../vendor/jquery-localize-i18n/dist/jquery.localize.js"></script>
+  <!-- RTL demo-->
+  <script src="js/demo/demo-rtl.js"></script>
+  <!-- =============== PAGE VENDOR SCRIPTS ===============-->
+  <!-- JQUERY STEPS-->
+  <script src="../vendor/jquery.steps/build/jquery.steps.js"></script>
+  <!-- =============== APP SCRIPTS ===============-->
+  <script src="js/app.js"></script>
+  <script src="js/magnific-popup.js"></script>
+  <script>
+  (function(window, document, $, undefined) {
+    $(function() {
+
+      $("#example-vertical").steps({
+        headerTag: "h4",
+        bodyTag: "section",
+        transitionEffect: "fade",
+        stepsOrientation: "horizontal",
+        labels: {
+          next: "Next step",
+          previous: "Previous step",
+          finish: "Save form"
+        }
+      });
+
+    });
+  })(window, document, window.jQuery);
+  </script>
+  <script>
+    jQuery(document).ready(function() {
+      jQuery(".form-builder-sidebar .widget").not(".widget-branching").click(function(event){
+        event.preventDefault();
+
+        jQuery.magnificPopup.open({
+          items: {
+              src: jQuery(".popup > div"),
+              type: 'inline'
+          }
+        });
+      })
+
+
+      jQuery(".widget-branching").click(function(event){
+        event.preventDefault();
+
+        jQuery.magnificPopup.open({
+          items: {
+              src: jQuery(".popup2 > div"),
+              type: 'inline'
+          }
+        });
+      })
+
+      jQuery("#highlight").hover(function() {
+        jQuery(".widget").not("#hl1, #hl2, #hl3, #highlight").css("opacity", "0.2");
+      }, function() {
+        jQuery(".widget").css("opacity", "1");
+      })
+
+
+    })
+  </script>
+</body>
+
+</html>
